@@ -1,0 +1,16 @@
+Internal Representation:
+    [[Operation1, [Input1, Input2, ... , InputN]] , [Operation2, [Input1, Input2, ... , InputN]]]
+
+Operations:
+
+    SET{VAR, val_type, VAR or NUM or MATH, var_exists}
+    MATH{mOP_ID, val_type, VAR or NUM or MATH, val_type, VAR or NUM or MATH}
+    COMP{cOP_ID, val_type, VAR or NUM or MATH, val_type, VAR or NUM or MATH}
+    IF{COMP, [Operations], comp_exists}
+    FOR{val_type, VAR or NUM or MATH, [Operations]}
+    WHILE{COMP, [Operations], comp_exists}
+    SUBMIT{val_type, VAR or NUM or MATH}
+
+    Blank
+    Num
+    Var

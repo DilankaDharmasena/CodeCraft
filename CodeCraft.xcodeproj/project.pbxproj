@@ -1,0 +1,809 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FA04D58721B9B8B800EA4F35 /* SetBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA04D58621B9B8B800EA4F35 /* SetBlock.swift */; };
+		FA04D58B21B9BEB700EA4F35 /* MathBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA04D58A21B9BEB700EA4F35 /* MathBlock.swift */; };
+		FA04D58D21B9BEDD00EA4F35 /* CompBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA04D58C21B9BEDD00EA4F35 /* CompBlock.swift */; };
+		FA04D58F21B9BF1C00EA4F35 /* SubmitBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA04D58E21B9BF1C00EA4F35 /* SubmitBlock.swift */; };
+		FA04D59121B9BF4000EA4F35 /* IfBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA04D59021B9BF4000EA4F35 /* IfBlock.swift */; };
+		FA04D59321B9BF8600EA4F35 /* ForBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA04D59221B9BF8600EA4F35 /* ForBlock.swift */; };
+		FA04D59521B9BFA400EA4F35 /* WhileBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA04D59421B9BFA400EA4F35 /* WhileBlock.swift */; };
+		FA04D59921B9CA2300EA4F35 /* SetBlock.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA04D59821B9CA2300EA4F35 /* SetBlock.xib */; };
+		FA04D59B21BB567600EA4F35 /* VarBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA04D59A21BB567600EA4F35 /* VarBlock.swift */; };
+		FA04D59D21BB56A500EA4F35 /* NumBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA04D59C21BB56A500EA4F35 /* NumBlock.swift */; };
+		FA04D59F21BB56C700EA4F35 /* VarBlock.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA04D59E21BB56C700EA4F35 /* VarBlock.xib */; };
+		FA04D5AB21BB680000EA4F35 /* MathBlock.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA04D5AA21BB680000EA4F35 /* MathBlock.xib */; };
+		FA04D5AD21BB722700EA4F35 /* CompBlock.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA04D5AC21BB722700EA4F35 /* CompBlock.xib */; };
+		FA04D5AF21BB755300EA4F35 /* NumBlock.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA04D5AE21BB755300EA4F35 /* NumBlock.xib */; };
+		FA04D5B121BB78A100EA4F35 /* SubmitBlock.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA04D5B021BB78A100EA4F35 /* SubmitBlock.xib */; };
+		FA04D5B321BB7D2A00EA4F35 /* IfBlock.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA04D5B221BB7D2A00EA4F35 /* IfBlock.xib */; };
+		FA04D5B521BB90F800EA4F35 /* ForBlock.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA04D5B421BB90F800EA4F35 /* ForBlock.xib */; };
+		FA04D5B721BB938400EA4F35 /* WhileBlock.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA04D5B621BB938400EA4F35 /* WhileBlock.xib */; };
+		FA04D5B921BB97CE00EA4F35 /* BlockDimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA04D5B821BB97CE00EA4F35 /* BlockDimensions.swift */; };
+		FA04D5BE21BC3F6C00EA4F35 /* BlankBlock.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA04D5BD21BC3F6C00EA4F35 /* BlankBlock.xib */; };
+		FA04D5C021BC3F8500EA4F35 /* BlankBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA04D5BF21BC3F8500EA4F35 /* BlankBlock.swift */; };
+		FA93B71B21A4B9670053167D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93B71A21A4B9670053167D /* AppDelegate.swift */; };
+		FA93B72021A4B9670053167D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA93B71E21A4B9670053167D /* Main.storyboard */; };
+		FA93B72321A4B9670053167D /* CodeCraft.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA93B72121A4B9670053167D /* CodeCraft.xcdatamodeld */; };
+		FA93B72521A4B9680053167D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA93B72421A4B9680053167D /* Assets.xcassets */; };
+		FA93B72821A4B9680053167D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA93B72621A4B9680053167D /* LaunchScreen.storyboard */; };
+		FA93B73321A4B9680053167D /* CodeCraftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93B73221A4B9680053167D /* CodeCraftTests.swift */; };
+		FA93B74221A4F74C0053167D /* LevelBubbleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93B74121A4F74C0053167D /* LevelBubbleCollectionViewCell.swift */; };
+		FACB979021BCA9E00022DA15 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB978F21BCA9E00022DA15 /* Block.swift */; };
+		FACB979221BCAD110022DA15 /* CodeEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB979121BCAD110022DA15 /* CodeEditor.swift */; };
+		FACB979421BCC18D0022DA15 /* CodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB979321BCC18D0022DA15 /* CodeModel.swift */; };
+		FACB979821BD55660022DA15 /* BlockEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB979721BD55660022DA15 /* BlockEditViewController.swift */; };
+		FACB979A21BD65C10022DA15 /* ValidInputs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB979921BD65C10022DA15 /* ValidInputs.swift */; };
+		FACB979C21BD86920022DA15 /* BlockCreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB979B21BD86920022DA15 /* BlockCreateViewController.swift */; };
+		FACB97A121BDE8800022DA15 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB97A021BDE8800022DA15 /* TaskViewController.swift */; };
+		FAEAA4F521AF52B5002EDEBF /* Compiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEAA4F421AF52B5002EDEBF /* Compiler.swift */; };
+		FAEAA4F721AF5521002EDEBF /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEAA4F621AF5521002EDEBF /* Test.swift */; };
+		FAEAA4F921AF5B96002EDEBF /* CodeTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEAA4F821AF5B96002EDEBF /* CodeTranslator.swift */; };
+		FAF2D67C21A77F6A006781DE /* LevelSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2D67B21A77F6A006781DE /* LevelSelectionViewController.swift */; };
+		FAF2D68621A7A2B2006781DE /* levels.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAF2D68521A7A2B2006781DE /* levels.plist */; };
+		FAF2D68821A7A5EF006781DE /* LevelLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2D68721A7A5EF006781DE /* LevelLoader.swift */; };
+		FAF2D6B921A7B86F006781DE /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2D6B821A7B86F006781DE /* DataManager.swift */; };
+		FAF2D6BB21A7BC40006781DE /* LevelModelUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2D6BA21A7BC40006781DE /* LevelModelUtils.swift */; };
+		FAF2D6BE21A8EAA3006781DE /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2D6BD21A8EAA3006781DE /* GameViewController.swift */; };
+		FAF2D6DB21AA4FAC006781DE /* LanguageDefinition.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAF2D6DA21AA4FAC006781DE /* LanguageDefinition.txt */; };
+		FAF2D6EC21AB14AA006781DE /* UniversalTypeDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2D6EB21AB14AA006781DE /* UniversalTypeDefinitions.swift */; };
+		FAF2D6EE21AB23D8006781DE /* LevelMOExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2D6ED21AB23D8006781DE /* LevelMOExtension.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FA93B72F21A4B9680053167D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA93B70F21A4B9670053167D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA93B71621A4B9670053167D;
+			remoteInfo = CodeCraft;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FA04D58621B9B8B800EA4F35 /* SetBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetBlock.swift; sourceTree = "<group>"; };
+		FA04D58A21B9BEB700EA4F35 /* MathBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathBlock.swift; sourceTree = "<group>"; };
+		FA04D58C21B9BEDD00EA4F35 /* CompBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompBlock.swift; sourceTree = "<group>"; };
+		FA04D58E21B9BF1C00EA4F35 /* SubmitBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitBlock.swift; sourceTree = "<group>"; };
+		FA04D59021B9BF4000EA4F35 /* IfBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IfBlock.swift; sourceTree = "<group>"; };
+		FA04D59221B9BF8600EA4F35 /* ForBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForBlock.swift; sourceTree = "<group>"; };
+		FA04D59421B9BFA400EA4F35 /* WhileBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhileBlock.swift; sourceTree = "<group>"; };
+		FA04D59821B9CA2300EA4F35 /* SetBlock.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SetBlock.xib; sourceTree = "<group>"; };
+		FA04D59A21BB567600EA4F35 /* VarBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VarBlock.swift; sourceTree = "<group>"; };
+		FA04D59C21BB56A500EA4F35 /* NumBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumBlock.swift; sourceTree = "<group>"; };
+		FA04D59E21BB56C700EA4F35 /* VarBlock.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VarBlock.xib; sourceTree = "<group>"; };
+		FA04D5AA21BB680000EA4F35 /* MathBlock.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MathBlock.xib; sourceTree = "<group>"; };
+		FA04D5AC21BB722700EA4F35 /* CompBlock.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompBlock.xib; sourceTree = "<group>"; };
+		FA04D5AE21BB755300EA4F35 /* NumBlock.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumBlock.xib; sourceTree = "<group>"; };
+		FA04D5B021BB78A100EA4F35 /* SubmitBlock.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SubmitBlock.xib; sourceTree = "<group>"; };
+		FA04D5B221BB7D2A00EA4F35 /* IfBlock.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IfBlock.xib; sourceTree = "<group>"; };
+		FA04D5B421BB90F800EA4F35 /* ForBlock.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForBlock.xib; sourceTree = "<group>"; };
+		FA04D5B621BB938400EA4F35 /* WhileBlock.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WhileBlock.xib; sourceTree = "<group>"; };
+		FA04D5B821BB97CE00EA4F35 /* BlockDimensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockDimensions.swift; sourceTree = "<group>"; };
+		FA04D5BD21BC3F6C00EA4F35 /* BlankBlock.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlankBlock.xib; sourceTree = "<group>"; };
+		FA04D5BF21BC3F8500EA4F35 /* BlankBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankBlock.swift; sourceTree = "<group>"; };
+		FA93B71721A4B9670053167D /* CodeCraft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeCraft.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA93B71A21A4B9670053167D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FA93B71F21A4B9670053167D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FA93B72221A4B9670053167D /* CodeCraft.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CodeCraft.xcdatamodel; sourceTree = "<group>"; };
+		FA93B72421A4B9680053167D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA93B72721A4B9680053167D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FA93B72921A4B9680053167D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA93B72E21A4B9680053167D /* CodeCraftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeCraftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA93B73221A4B9680053167D /* CodeCraftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeCraftTests.swift; sourceTree = "<group>"; };
+		FA93B73421A4B9680053167D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA93B74121A4F74C0053167D /* LevelBubbleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelBubbleCollectionViewCell.swift; sourceTree = "<group>"; };
+		FACB978F21BCA9E00022DA15 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
+		FACB979121BCAD110022DA15 /* CodeEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeEditor.swift; sourceTree = "<group>"; };
+		FACB979321BCC18D0022DA15 /* CodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeModel.swift; sourceTree = "<group>"; };
+		FACB979721BD55660022DA15 /* BlockEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockEditViewController.swift; sourceTree = "<group>"; };
+		FACB979921BD65C10022DA15 /* ValidInputs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidInputs.swift; sourceTree = "<group>"; };
+		FACB979B21BD86920022DA15 /* BlockCreateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockCreateViewController.swift; sourceTree = "<group>"; };
+		FACB97A021BDE8800022DA15 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		FAEAA4F421AF52B5002EDEBF /* Compiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compiler.swift; sourceTree = "<group>"; };
+		FAEAA4F621AF5521002EDEBF /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		FAEAA4F821AF5B96002EDEBF /* CodeTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTranslator.swift; sourceTree = "<group>"; };
+		FAF2D67B21A77F6A006781DE /* LevelSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectionViewController.swift; sourceTree = "<group>"; };
+		FAF2D68521A7A2B2006781DE /* levels.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = levels.plist; sourceTree = "<group>"; };
+		FAF2D68721A7A5EF006781DE /* LevelLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelLoader.swift; sourceTree = "<group>"; };
+		FAF2D6B821A7B86F006781DE /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		FAF2D6BA21A7BC40006781DE /* LevelModelUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelModelUtils.swift; sourceTree = "<group>"; };
+		FAF2D6BD21A8EAA3006781DE /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		FAF2D6DA21AA4FAC006781DE /* LanguageDefinition.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LanguageDefinition.txt; sourceTree = "<group>"; };
+		FAF2D6EB21AB14AA006781DE /* UniversalTypeDefinitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalTypeDefinitions.swift; sourceTree = "<group>"; };
+		FAF2D6ED21AB23D8006781DE /* LevelMOExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelMOExtension.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA93B71421A4B9670053167D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA93B72B21A4B9680053167D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FA04D5A121BB56F000EA4F35 /* SetBlock */ = {
+			isa = PBXGroup;
+			children = (
+				FA04D58621B9B8B800EA4F35 /* SetBlock.swift */,
+				FA04D59821B9CA2300EA4F35 /* SetBlock.xib */,
+			);
+			path = SetBlock;
+			sourceTree = "<group>";
+		};
+		FA04D5A221BB570500EA4F35 /* VarBlock */ = {
+			isa = PBXGroup;
+			children = (
+				FA04D59E21BB56C700EA4F35 /* VarBlock.xib */,
+				FA04D59A21BB567600EA4F35 /* VarBlock.swift */,
+			);
+			path = VarBlock;
+			sourceTree = "<group>";
+		};
+		FA04D5A321BB571A00EA4F35 /* MathBlock */ = {
+			isa = PBXGroup;
+			children = (
+				FA04D58A21B9BEB700EA4F35 /* MathBlock.swift */,
+				FA04D5AA21BB680000EA4F35 /* MathBlock.xib */,
+			);
+			path = MathBlock;
+			sourceTree = "<group>";
+		};
+		FA04D5A421BB572800EA4F35 /* CompBlock */ = {
+			isa = PBXGroup;
+			children = (
+				FA04D58C21B9BEDD00EA4F35 /* CompBlock.swift */,
+				FA04D5AC21BB722700EA4F35 /* CompBlock.xib */,
+			);
+			path = CompBlock;
+			sourceTree = "<group>";
+		};
+		FA04D5A521BB573700EA4F35 /* SubmitBlock */ = {
+			isa = PBXGroup;
+			children = (
+				FA04D58E21B9BF1C00EA4F35 /* SubmitBlock.swift */,
+				FA04D5B021BB78A100EA4F35 /* SubmitBlock.xib */,
+			);
+			path = SubmitBlock;
+			sourceTree = "<group>";
+		};
+		FA04D5A621BB574600EA4F35 /* IfBlock */ = {
+			isa = PBXGroup;
+			children = (
+				FA04D59021B9BF4000EA4F35 /* IfBlock.swift */,
+				FA04D5B221BB7D2A00EA4F35 /* IfBlock.xib */,
+			);
+			path = IfBlock;
+			sourceTree = "<group>";
+		};
+		FA04D5A721BB577100EA4F35 /* ForBlock */ = {
+			isa = PBXGroup;
+			children = (
+				FA04D59221B9BF8600EA4F35 /* ForBlock.swift */,
+				FA04D5B421BB90F800EA4F35 /* ForBlock.xib */,
+			);
+			path = ForBlock;
+			sourceTree = "<group>";
+		};
+		FA04D5A821BB577C00EA4F35 /* WhileBlock */ = {
+			isa = PBXGroup;
+			children = (
+				FA04D59421B9BFA400EA4F35 /* WhileBlock.swift */,
+				FA04D5B621BB938400EA4F35 /* WhileBlock.xib */,
+			);
+			path = WhileBlock;
+			sourceTree = "<group>";
+		};
+		FA04D5A921BB578700EA4F35 /* NumBlock */ = {
+			isa = PBXGroup;
+			children = (
+				FA04D59C21BB56A500EA4F35 /* NumBlock.swift */,
+				FA04D5AE21BB755300EA4F35 /* NumBlock.xib */,
+			);
+			path = NumBlock;
+			sourceTree = "<group>";
+		};
+		FA04D5BA21BC3F3A00EA4F35 /* BlankBlock */ = {
+			isa = PBXGroup;
+			children = (
+				FA04D5BD21BC3F6C00EA4F35 /* BlankBlock.xib */,
+				FA04D5BF21BC3F8500EA4F35 /* BlankBlock.swift */,
+			);
+			path = BlankBlock;
+			sourceTree = "<group>";
+		};
+		FA93B70E21A4B9670053167D = {
+			isa = PBXGroup;
+			children = (
+				FA93B71921A4B9670053167D /* CodeCraft */,
+				FA93B73121A4B9680053167D /* CodeCraftTests */,
+				FA93B71821A4B9670053167D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FA93B71821A4B9670053167D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA93B71721A4B9670053167D /* CodeCraft.app */,
+				FA93B72E21A4B9680053167D /* CodeCraftTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA93B71921A4B9670053167D /* CodeCraft */ = {
+			isa = PBXGroup;
+			children = (
+				FA93B74021A4F06F0053167D /* Assets */,
+				FA93B73F21A4F05C0053167D /* Controller */,
+				FA93B73E21A4F0410053167D /* View */,
+				FA93B73D21A4F01B0053167D /* Model */,
+				FA93B71A21A4B9670053167D /* AppDelegate.swift */,
+				FA93B72921A4B9680053167D /* Info.plist */,
+			);
+			path = CodeCraft;
+			sourceTree = "<group>";
+		};
+		FA93B73121A4B9680053167D /* CodeCraftTests */ = {
+			isa = PBXGroup;
+			children = (
+				FA93B73221A4B9680053167D /* CodeCraftTests.swift */,
+				FA93B73421A4B9680053167D /* Info.plist */,
+			);
+			path = CodeCraftTests;
+			sourceTree = "<group>";
+		};
+		FA93B73D21A4F01B0053167D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FACB979F21BDDED00022DA15 /* Compiler */,
+				FACB979E21BDDE5E0022DA15 /* Code */,
+				FACB979D21BDDE2C0022DA15 /* Level */,
+				FAF2D6EB21AB14AA006781DE /* UniversalTypeDefinitions.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FA93B73E21A4F0410053167D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FAF2D6C321A91211006781DE /* Blocks */,
+				FAF2D68021A785A8006781DE /* LevelSelection */,
+				FA93B72621A4B9680053167D /* LaunchScreen.storyboard */,
+				FA93B71E21A4B9670053167D /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA93B73F21A4F05C0053167D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FAF2D6BC21A8E9FE006781DE /* Game */,
+				FAF2D67F21A78539006781DE /* LevelSelection */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FA93B74021A4F06F0053167D /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				FA93B72421A4B9680053167D /* Assets.xcassets */,
+				FAF2D68521A7A2B2006781DE /* levels.plist */,
+				FAF2D6DA21AA4FAC006781DE /* LanguageDefinition.txt */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		FACB979D21BDDE2C0022DA15 /* Level */ = {
+			isa = PBXGroup;
+			children = (
+				FA93B72121A4B9670053167D /* CodeCraft.xcdatamodeld */,
+				FAF2D68721A7A5EF006781DE /* LevelLoader.swift */,
+				FAF2D6B821A7B86F006781DE /* DataManager.swift */,
+				FAF2D6BA21A7BC40006781DE /* LevelModelUtils.swift */,
+				FAF2D6ED21AB23D8006781DE /* LevelMOExtension.swift */,
+			);
+			path = Level;
+			sourceTree = "<group>";
+		};
+		FACB979E21BDDE5E0022DA15 /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				FACB979121BCAD110022DA15 /* CodeEditor.swift */,
+				FACB979921BD65C10022DA15 /* ValidInputs.swift */,
+				FACB979321BCC18D0022DA15 /* CodeModel.swift */,
+			);
+			path = Code;
+			sourceTree = "<group>";
+		};
+		FACB979F21BDDED00022DA15 /* Compiler */ = {
+			isa = PBXGroup;
+			children = (
+				FAEAA4F421AF52B5002EDEBF /* Compiler.swift */,
+				FAEAA4F621AF5521002EDEBF /* Test.swift */,
+			);
+			path = Compiler;
+			sourceTree = "<group>";
+		};
+		FAF2D67F21A78539006781DE /* LevelSelection */ = {
+			isa = PBXGroup;
+			children = (
+				FAF2D67B21A77F6A006781DE /* LevelSelectionViewController.swift */,
+			);
+			path = LevelSelection;
+			sourceTree = "<group>";
+		};
+		FAF2D68021A785A8006781DE /* LevelSelection */ = {
+			isa = PBXGroup;
+			children = (
+				FA93B74121A4F74C0053167D /* LevelBubbleCollectionViewCell.swift */,
+			);
+			path = LevelSelection;
+			sourceTree = "<group>";
+		};
+		FAF2D6BC21A8E9FE006781DE /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				FAF2D6BD21A8EAA3006781DE /* GameViewController.swift */,
+				FACB979721BD55660022DA15 /* BlockEditViewController.swift */,
+				FACB979B21BD86920022DA15 /* BlockCreateViewController.swift */,
+				FACB97A021BDE8800022DA15 /* TaskViewController.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		FAF2D6C321A91211006781DE /* Blocks */ = {
+			isa = PBXGroup;
+			children = (
+				FA04D5A821BB577C00EA4F35 /* WhileBlock */,
+				FA04D5A721BB577100EA4F35 /* ForBlock */,
+				FA04D5A621BB574600EA4F35 /* IfBlock */,
+				FA04D5A521BB573700EA4F35 /* SubmitBlock */,
+				FA04D5A121BB56F000EA4F35 /* SetBlock */,
+				FA04D5A421BB572800EA4F35 /* CompBlock */,
+				FA04D5A321BB571A00EA4F35 /* MathBlock */,
+				FA04D5BA21BC3F3A00EA4F35 /* BlankBlock */,
+				FA04D5A921BB578700EA4F35 /* NumBlock */,
+				FA04D5A221BB570500EA4F35 /* VarBlock */,
+				FAEAA4F821AF5B96002EDEBF /* CodeTranslator.swift */,
+				FA04D5B821BB97CE00EA4F35 /* BlockDimensions.swift */,
+				FACB978F21BCA9E00022DA15 /* Block.swift */,
+			);
+			path = Blocks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FA93B71621A4B9670053167D /* CodeCraft */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA93B73721A4B9680053167D /* Build configuration list for PBXNativeTarget "CodeCraft" */;
+			buildPhases = (
+				FA93B71321A4B9670053167D /* Sources */,
+				FA93B71421A4B9670053167D /* Frameworks */,
+				FA93B71521A4B9670053167D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CodeCraft;
+			productName = CodeCraft;
+			productReference = FA93B71721A4B9670053167D /* CodeCraft.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FA93B72D21A4B9680053167D /* CodeCraftTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA93B73A21A4B9680053167D /* Build configuration list for PBXNativeTarget "CodeCraftTests" */;
+			buildPhases = (
+				FA93B72A21A4B9680053167D /* Sources */,
+				FA93B72B21A4B9680053167D /* Frameworks */,
+				FA93B72C21A4B9680053167D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA93B73021A4B9680053167D /* PBXTargetDependency */,
+			);
+			name = CodeCraftTests;
+			productName = CodeCraftTests;
+			productReference = FA93B72E21A4B9680053167D /* CodeCraftTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA93B70F21A4B9670053167D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = dilankadharmasena;
+				TargetAttributes = {
+					FA93B71621A4B9670053167D = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					FA93B72D21A4B9680053167D = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = FA93B71621A4B9670053167D;
+					};
+				};
+			};
+			buildConfigurationList = FA93B71221A4B9670053167D /* Build configuration list for PBXProject "CodeCraft" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FA93B70E21A4B9670053167D;
+			productRefGroup = FA93B71821A4B9670053167D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA93B71621A4B9670053167D /* CodeCraft */,
+				FA93B72D21A4B9680053167D /* CodeCraftTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA93B71521A4B9670053167D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA93B72821A4B9680053167D /* LaunchScreen.storyboard in Resources */,
+				FA04D59F21BB56C700EA4F35 /* VarBlock.xib in Resources */,
+				FA04D5BE21BC3F6C00EA4F35 /* BlankBlock.xib in Resources */,
+				FA04D5AF21BB755300EA4F35 /* NumBlock.xib in Resources */,
+				FA04D59921B9CA2300EA4F35 /* SetBlock.xib in Resources */,
+				FA04D5B321BB7D2A00EA4F35 /* IfBlock.xib in Resources */,
+				FAF2D68621A7A2B2006781DE /* levels.plist in Resources */,
+				FA04D5B721BB938400EA4F35 /* WhileBlock.xib in Resources */,
+				FA93B72521A4B9680053167D /* Assets.xcassets in Resources */,
+				FAF2D6DB21AA4FAC006781DE /* LanguageDefinition.txt in Resources */,
+				FA04D5B121BB78A100EA4F35 /* SubmitBlock.xib in Resources */,
+				FA04D5AD21BB722700EA4F35 /* CompBlock.xib in Resources */,
+				FA93B72021A4B9670053167D /* Main.storyboard in Resources */,
+				FA04D5AB21BB680000EA4F35 /* MathBlock.xib in Resources */,
+				FA04D5B521BB90F800EA4F35 /* ForBlock.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA93B72C21A4B9680053167D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA93B71321A4B9670053167D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA04D58D21B9BEDD00EA4F35 /* CompBlock.swift in Sources */,
+				FAF2D6BE21A8EAA3006781DE /* GameViewController.swift in Sources */,
+				FA04D5C021BC3F8500EA4F35 /* BlankBlock.swift in Sources */,
+				FA04D59121B9BF4000EA4F35 /* IfBlock.swift in Sources */,
+				FA93B74221A4F74C0053167D /* LevelBubbleCollectionViewCell.swift in Sources */,
+				FACB97A121BDE8800022DA15 /* TaskViewController.swift in Sources */,
+				FA04D59B21BB567600EA4F35 /* VarBlock.swift in Sources */,
+				FAF2D6B921A7B86F006781DE /* DataManager.swift in Sources */,
+				FA04D59D21BB56A500EA4F35 /* NumBlock.swift in Sources */,
+				FAF2D68821A7A5EF006781DE /* LevelLoader.swift in Sources */,
+				FA04D59321B9BF8600EA4F35 /* ForBlock.swift in Sources */,
+				FAF2D6EE21AB23D8006781DE /* LevelMOExtension.swift in Sources */,
+				FAF2D6EC21AB14AA006781DE /* UniversalTypeDefinitions.swift in Sources */,
+				FA93B72321A4B9670053167D /* CodeCraft.xcdatamodeld in Sources */,
+				FA04D5B921BB97CE00EA4F35 /* BlockDimensions.swift in Sources */,
+				FACB979C21BD86920022DA15 /* BlockCreateViewController.swift in Sources */,
+				FAF2D67C21A77F6A006781DE /* LevelSelectionViewController.swift in Sources */,
+				FACB979421BCC18D0022DA15 /* CodeModel.swift in Sources */,
+				FACB979221BCAD110022DA15 /* CodeEditor.swift in Sources */,
+				FA93B71B21A4B9670053167D /* AppDelegate.swift in Sources */,
+				FACB979021BCA9E00022DA15 /* Block.swift in Sources */,
+				FACB979821BD55660022DA15 /* BlockEditViewController.swift in Sources */,
+				FA04D59521B9BFA400EA4F35 /* WhileBlock.swift in Sources */,
+				FA04D58B21B9BEB700EA4F35 /* MathBlock.swift in Sources */,
+				FAEAA4F721AF5521002EDEBF /* Test.swift in Sources */,
+				FA04D58721B9B8B800EA4F35 /* SetBlock.swift in Sources */,
+				FAEAA4F521AF52B5002EDEBF /* Compiler.swift in Sources */,
+				FAEAA4F921AF5B96002EDEBF /* CodeTranslator.swift in Sources */,
+				FA04D58F21B9BF1C00EA4F35 /* SubmitBlock.swift in Sources */,
+				FAF2D6BB21A7BC40006781DE /* LevelModelUtils.swift in Sources */,
+				FACB979A21BD65C10022DA15 /* ValidInputs.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA93B72A21A4B9680053167D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA93B73321A4B9680053167D /* CodeCraftTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FA93B73021A4B9680053167D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA93B71621A4B9670053167D /* CodeCraft */;
+			targetProxy = FA93B72F21A4B9680053167D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FA93B71E21A4B9670053167D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA93B71F21A4B9670053167D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FA93B72621A4B9680053167D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA93B72721A4B9680053167D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FA93B73521A4B9680053167D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FA93B73621A4B9680053167D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FA93B73821A4B9680053167D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CodeCraft/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = edu.psu.cse.dtd5123.CodeCraft;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FA93B73921A4B9680053167D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CodeCraft/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = edu.psu.cse.dtd5123.CodeCraft;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FA93B73B21A4B9680053167D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CodeCraftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = edu.psu.cse.dtd5123.CodeCraftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CodeCraft.app/CodeCraft";
+			};
+			name = Debug;
+		};
+		FA93B73C21A4B9680053167D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = CodeCraftTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = edu.psu.cse.dtd5123.CodeCraftTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CodeCraft.app/CodeCraft";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA93B71221A4B9670053167D /* Build configuration list for PBXProject "CodeCraft" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA93B73521A4B9680053167D /* Debug */,
+				FA93B73621A4B9680053167D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA93B73721A4B9680053167D /* Build configuration list for PBXNativeTarget "CodeCraft" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA93B73821A4B9680053167D /* Debug */,
+				FA93B73921A4B9680053167D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA93B73A21A4B9680053167D /* Build configuration list for PBXNativeTarget "CodeCraftTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA93B73B21A4B9680053167D /* Debug */,
+				FA93B73C21A4B9680053167D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FA93B72121A4B9670053167D /* CodeCraft.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FA93B72221A4B9670053167D /* CodeCraft.xcdatamodel */,
+			);
+			currentVersion = FA93B72221A4B9670053167D /* CodeCraft.xcdatamodel */;
+			path = CodeCraft.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FA93B70F21A4B9670053167D /* Project object */;
+}
