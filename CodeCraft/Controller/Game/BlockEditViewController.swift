@@ -34,7 +34,7 @@ class BlockEditViewController: UIViewController, UIPickerViewDataSource, UIPicke
         picker.dataSource = self
         picker.delegate = self
         
-        switch blockID.internalType {
+        switch blockID.internalType! {
         case .whileBlock, .forBlock, .ifBlock, .submitBlock, .setBlock:
             saveButton.isHidden = true
             editLabel.isHidden = true
@@ -62,7 +62,7 @@ class BlockEditViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     override func viewDidAppear(_ animated: Bool) {
         if(!data.isEmpty) {
-            switch blockID.internalType {
+            switch blockID.internalType! {
             case .compBlock:
                 let comp = data[0] as! String
                 let index = ValidInputs().comparisons.index(of: comp)
@@ -99,7 +99,7 @@ class BlockEditViewController: UIViewController, UIPickerViewDataSource, UIPicke
     
     @IBAction func saveTapped(_ sender: UIButton) {
         
-        switch blockID.internalType {
+        switch blockID.internalType! {
         case .compBlock:
             let index = picker.selectedRow(inComponent: 0)
             let input = ValidInputs().comparisons[index]
@@ -147,7 +147,7 @@ class BlockEditViewController: UIViewController, UIPickerViewDataSource, UIPicke
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        switch blockID.internalType {
+        switch blockID.internalType! {
         case .compBlock:
             return ValidInputs().comparisons.count
         case .mathBlock:
@@ -160,7 +160,7 @@ class BlockEditViewController: UIViewController, UIPickerViewDataSource, UIPicke
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        switch blockID.internalType {
+        switch blockID.internalType! {
         case .compBlock:
             return ValidInputs().comparisons[row]
         case .mathBlock:

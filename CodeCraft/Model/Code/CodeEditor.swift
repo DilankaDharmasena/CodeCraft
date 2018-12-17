@@ -114,7 +114,7 @@ class CodeEditor : BlockDelegate {
         var parent = unwrappedCode.0
         
         
-        switch block.internalType {
+        switch block.internalType! {
         case .mathBlock:
             
             let index = varNumMathIndicies(block: block)
@@ -155,7 +155,7 @@ class CodeEditor : BlockDelegate {
         var parent = unwrappedCode.0
         
         
-        switch block.internalType {
+        switch block.internalType! {
         case .mathBlock:
             
             let index = varNumMathIndicies(block: block)
@@ -229,7 +229,7 @@ class CodeEditor : BlockDelegate {
         var parent = unwrappedCode.0
         
         
-        switch block.internalType {
+        switch block.internalType! {
         case .mathBlock, .numBlock:
             
             let index = varNumMathIndicies(block: block)

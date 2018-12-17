@@ -51,7 +51,6 @@
 		FAF2D6B921A7B86F006781DE /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2D6B821A7B86F006781DE /* DataManager.swift */; };
 		FAF2D6BB21A7BC40006781DE /* LevelModelUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2D6BA21A7BC40006781DE /* LevelModelUtils.swift */; };
 		FAF2D6BE21A8EAA3006781DE /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2D6BD21A8EAA3006781DE /* GameViewController.swift */; };
-		FAF2D6DB21AA4FAC006781DE /* LanguageDefinition.txt in Resources */ = {isa = PBXBuildFile; fileRef = FAF2D6DA21AA4FAC006781DE /* LanguageDefinition.txt */; };
 		FAF2D6EC21AB14AA006781DE /* UniversalTypeDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2D6EB21AB14AA006781DE /* UniversalTypeDefinitions.swift */; };
 		FAF2D6EE21AB23D8006781DE /* LevelMOExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2D6ED21AB23D8006781DE /* LevelMOExtension.swift */; };
 /* End PBXBuildFile section */
@@ -115,7 +114,6 @@
 		FAF2D6B821A7B86F006781DE /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		FAF2D6BA21A7BC40006781DE /* LevelModelUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelModelUtils.swift; sourceTree = "<group>"; };
 		FAF2D6BD21A8EAA3006781DE /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		FAF2D6DA21AA4FAC006781DE /* LanguageDefinition.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LanguageDefinition.txt; sourceTree = "<group>"; };
 		FAF2D6EB21AB14AA006781DE /* UniversalTypeDefinitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalTypeDefinitions.swift; sourceTree = "<group>"; };
 		FAF2D6ED21AB23D8006781DE /* LevelMOExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelMOExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -304,7 +302,6 @@
 			children = (
 				FA93B72421A4B9680053167D /* Assets.xcassets */,
 				FAF2D68521A7A2B2006781DE /* levels.plist */,
-				FAF2D6DA21AA4FAC006781DE /* LanguageDefinition.txt */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -437,9 +434,11 @@
 				TargetAttributes = {
 					FA93B71621A4B9670053167D = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1010;
 					};
 					FA93B72D21A4B9680053167D = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 1010;
 						TestTargetID = FA93B71621A4B9670053167D;
 					};
 				};
@@ -477,7 +476,6 @@
 				FAF2D68621A7A2B2006781DE /* levels.plist in Resources */,
 				FA04D5B721BB938400EA4F35 /* WhileBlock.xib in Resources */,
 				FA93B72521A4B9680053167D /* Assets.xcassets in Resources */,
-				FAF2D6DB21AA4FAC006781DE /* LanguageDefinition.txt in Resources */,
 				FA04D5B121BB78A100EA4F35 /* SubmitBlock.xib in Resources */,
 				FA04D5AD21BB722700EA4F35 /* CompBlock.xib in Resources */,
 				FA93B72021A4B9670053167D /* Main.storyboard in Resources */,
@@ -698,7 +696,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.psu.cse.dtd5123.CodeCraft;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -715,7 +713,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.psu.cse.dtd5123.CodeCraft;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -734,7 +732,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.psu.cse.dtd5123.CodeCraftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CodeCraft.app/CodeCraft";
 			};
@@ -754,7 +752,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = edu.psu.cse.dtd5123.CodeCraftTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CodeCraft.app/CodeCraft";
 			};
