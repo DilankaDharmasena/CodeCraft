@@ -12,23 +12,34 @@ class CodeModel {
     
     var currentCode : Code {
         get {
-            return codeHistory[codeIndex]
+            return codeHistory[codeIndex].0
         }
         set(newCode) {
-            var newHistory : [Code] = Array(codeHistory.prefix(through: codeIndex))
-            newHistory.append(newCode)
+            var newHistory : [(Code, BlockID)] = Array(codeHistory.prefix(through: codeIndex))
+            newHistory.append((newCode, currentBlock))
             codeHistory = newHistory
             codeIndex += 1
         }
     }
     
-    var codeHistory : [Code] = [[]]
-    var codeIndex = 0
-    var currBlock : BlockID?
+    var currentBlock : BlockID {
+        get {
+            return codeHistory[codeIndex].1
+        }
+        set(newBlock) {
+            codeHistory[codeIndex].1 = newBlock
+        }
+        
+    }
     
-    init(code : Code) {
+    
+    var codeHistory : [(Code, BlockID)] = [([], BlockID.start)]
+    var codeIndex = 0
+    
+    init(code : Code, block: BlockID) {
         if(!code.isEmpty) {
-            codeHistory.append(code)
+            let initial = (code, block)
+            codeHistory.append(initial)
             codeIndex += 1
         }
     }
@@ -46,7 +57,7 @@ class CodeModel {
     }
     
     func clear() {
-        codeHistory = [[]]
+        codeHistory = [codeHistory[0]]
         codeIndex = 0
     }
     

@@ -39,7 +39,7 @@ class GameViewController: UIViewController, CodeEditorDelegate, BlockEditorDeleg
         
         levelModelUtils.startedLevel(id: gameID)
         
-        codeModel = CodeModel(code: [])
+        codeModel = CodeModel(code: [], block: BlockID.start) // Load saved answer
         codeEditor = CodeEditor(delegate: self)
         codeTranslator = CodeTranslator(editor: codeEditor)
         
@@ -77,7 +77,9 @@ class GameViewController: UIViewController, CodeEditorDelegate, BlockEditorDeleg
     @IBAction func runSubmitButtonTap(_ sender: UIButton) {
         
         let tester = Test()
-        if(tester.runTest(gameID: gameID, code: codeModel.currentCode) == 0) {
+        let res = tester.runTest(gameID: gameID, code: codeModel.currentCode)
+        
+        if(res == .yesAnswer) {
             
             levelModelUtils.finishedLevel(id: gameID)
             
@@ -86,7 +88,10 @@ class GameViewController: UIViewController, CodeEditorDelegate, BlockEditorDeleg
             alert.modalPresentationStyle = .overCurrentContext
             self.present(alert, animated: true, completion: nil)
         } else {
-            let alert = UIAlertController(title: "So Close", message: "Try again", preferredStyle: .alert)
+            
+            let message = UniversalStrings().errorMessages[res]
+            
+            let alert = UIAlertController(title: "So Close", message: message, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             alert.modalPresentationStyle = .overCurrentContext
             self.present(alert, animated: true, completion: nil)
@@ -106,19 +111,16 @@ class GameViewController: UIViewController, CodeEditorDelegate, BlockEditorDeleg
     
     @IBAction func addButtonTap(_ sender: UIButton) {
         
-        var currID = codeModel.currBlock
-        if(currID == nil) {
-            currID = BlockID(parentType: .operationBlock, parentLocation: [], parentRelationship: .operation, internalType: .blankBlock, internalLocation: 0)
-        }
+        let currID = codeModel.currentBlock
         
         let viewController = storyboard?.instantiateViewController(withIdentifier: "blockCreateScene") as! BlockCreateViewController
         viewController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-        viewController.configure(currID: currID!, delegate: self)
+        viewController.configure(currID: currID, delegate: self)
         present(viewController, animated: false, completion: nil)
     }
     
     @objc func handleDoubleTap() {
-        codeModel.currBlock = nil
+        codeModel.currentBlock = BlockID.start
     }
     
     @objc func handleLongPress() {
@@ -154,18 +156,24 @@ class GameViewController: UIViewController, CodeEditorDelegate, BlockEditorDeleg
     }
     
     func setSelectedBlock(id: BlockID) {
-        codeModel.currBlock = id
+        codeModel.currentBlock = id
     }
     
     func doneEditing(id: BlockID, data: Code, action: EditAction) {
         let newCode = codeEditor.editCode(code: codeModel.currentCode, block: id, data: data, action: action)
         codeModel.currentCode = newCode
+        if(action == .delete) {
+            codeModel.currentBlock = BlockID.start
+        }
         reloadView()
     }
     
     func doneCreating(id: BlockID, data: Code, action: EditAction) {
         let newCode = codeEditor.editCode(code: codeModel.currentCode, block: id, data: data, action: action)
         codeModel.currentCode = newCode
+        if(id.parentType == .operationBlock) {
+            codeModel.currentBlock = id
+        }
         reloadView()
     }
     

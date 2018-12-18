@@ -15,19 +15,7 @@ class ValidInputs {
     let variables : [String] = ["INPUT", "A", "B", "C", "D", "E" , "F"]
     let num : Int = 2147483647
     
-    let blockNames : [InternalType:String] =
-    [
-        .whileBlock : "While Loop",
-        .forBlock : "For Loop",
-        .ifBlock : "If Statement",
-        .submitBlock : "Submit Answer",
-        .setBlock : "Set Variable",
-        .compBlock : "Comparison",
-        .mathBlock : "Math Operation",
-        .blankBlock : "Empty",
-        .numBlock : "Number",
-        .varBlock : "Variable"
-    ]
+    let blockNames : [InternalType:String] = UniversalStrings().blockNames
     
     func blocks(id: BlockID) -> ([InternalType], [String]) {
         

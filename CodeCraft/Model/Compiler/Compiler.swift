@@ -14,10 +14,10 @@ class Compiler {
         let currTime = NSDate().timeIntervalSince1970
         
         if(startTime + 10 < currTime) {
-            return 1
+            return .timeoutError
         }
         
-        return 0
+        return .noAnswer
     }
     
     func fixScope(newVars: Variables, oldVars: Variables) -> Variables {
@@ -39,8 +39,8 @@ class Compiler {
     
     func runCode(variables : Variables, code : Code, startTime: TimeInterval) -> (Variables, ErrorCode) {
         
-        if(checkTimeout(startTime: startTime) == 1) {
-            return ([:], 1)
+        if(checkTimeout(startTime: startTime) == .timeoutError) {
+            return ([:], .timeoutError)
         }
         
         var variableUpdate = variables
@@ -51,45 +51,45 @@ class Compiler {
             let operation = lineUnwrapped[0] as! String
             let inputs = lineUnwrapped[1] as! Code
             
-            var result : (Variables, ErrorCode)
+            var res : (Variables, ErrorCode)
             
             switch operation{
             case "SET":
-                result = evaluateSet(variables : variableUpdate, code : inputs, startTime: startTime)
+                res = evaluateSet(variables : variableUpdate, code : inputs, startTime: startTime)
             case "IF":
-                result = evaluateIf(variables : variableUpdate, code : inputs, startTime: startTime)
+                res = evaluateIf(variables : variableUpdate, code : inputs, startTime: startTime)
             case "FOR":
-                result = evaluateFor(variables : variableUpdate, code : inputs, startTime: startTime)
+                res = evaluateFor(variables : variableUpdate, code : inputs, startTime: startTime)
             case "WHILE":
-                result = evaluateWhile(variables : variableUpdate, code : inputs, startTime: startTime)
+                res = evaluateWhile(variables : variableUpdate, code : inputs, startTime: startTime)
             default:
-                result = evaluateSubmit(variables : variableUpdate, code : inputs, startTime: startTime)
+                res = evaluateSubmit(variables : variableUpdate, code : inputs, startTime: startTime)
             }
             
-            if(result.1 == 2) {
-                return (result.0, 0)
-            } else if (result.1 == 1) {
-                return ([:], 1)
+            if(res.1 == .yesAnswer) {
+                return (res.0, .yesAnswer)
+            } else if (res.1 != .noAnswer) {
+                return ([:], res.1)
             }
             
-            variableUpdate = result.0
+            variableUpdate = res.0
         }
         
-        return (variableUpdate, 0)
+        return (variableUpdate, .noAnswer)
         
     }
     
     // SET{VAR, val_type, VAR or NUM or MATH, var exists}
     func evaluateSet(variables : Variables, code : Code, startTime: TimeInterval) ->  (Variables, ErrorCode) {
         
-        if(checkTimeout(startTime: startTime) == 1) {
-            return ([:], 1)
+        if(checkTimeout(startTime: startTime) == .timeoutError) {
+            return ([:], .timeoutError)
         }
         
         let var_exists : Bool = code[3] as! Bool
         
         if(!var_exists) {
-            return ([:], 1)
+            return ([:], .missingBlocksError)
         }
         
         let varToBeSet : String = code[0] as! String
@@ -102,7 +102,7 @@ class Compiler {
             let varToBeReceived : String = code[2] as! String
             
             if(variables[varToBeReceived] == nil) {
-                return ([:], 1)
+                return ([:], .outOfScopeError)
             }
             
             variablesUpdate[varToBeSet] = variables[varToBeReceived]
@@ -113,24 +113,26 @@ class Compiler {
             var res : (Int, ErrorCode)
             res = evaluateMath(variables : variables, code: code[2] as! Code, startTime: startTime)
             
-            if (res.1 == 1) {
-                return ([:], 1)
+            if(res.1 == .yesAnswer) {
+                return ([:], .internalError)
+            } else if (res.1 != .noAnswer) {
+                return ([:], res.1)
             }
             
             variablesUpdate[varToBeSet] = res.0
         default:
-            return ([:], 1)
+            return ([:], .missingBlocksError)
         }
         
-        return (variablesUpdate, 0)
+        return (variablesUpdate, .noAnswer)
         
     }
     
     // MATH{mOP_ID, val_type, VAR or NUM or MATH, val_type, VAR or NUM or MATH}
     func evaluateMath(variables : Variables, code: Code, startTime: TimeInterval) -> (Int, ErrorCode) {
         
-        if(checkTimeout(startTime: startTime) == 1) {
-            return (0, 1)
+        if(checkTimeout(startTime: startTime) == .timeoutError) {
+            return (0, .timeoutError)
         }
         
         let OpId = code[0] as! String
@@ -147,7 +149,7 @@ class Compiler {
             let varToBeReceived : String = code[2] as! String
             
             if(variables[varToBeReceived] == nil) {
-                return (0,1)
+                return (0, .outOfScopeError)
             }
             
             val1 = variables[varToBeReceived]!
@@ -159,13 +161,15 @@ class Compiler {
             
             res = evaluateMath(variables: variables, code: code[2] as! Code, startTime: startTime)
             
-            if (res.1 == 1) {
-                return (0, 1)
+            if(res.1 == .yesAnswer) {
+                return (0, .internalError)
+            } else if (res.1 != .noAnswer) {
+                return (0, res.1)
             }
             
             val1 = res.0
         default:
-            return (0, 1)
+            return (0, .missingBlocksError)
         }
         
         switch valType2 {
@@ -173,7 +177,7 @@ class Compiler {
             let varToBeReceived : String = code[4] as! String
             
             if(variables[varToBeReceived] == nil) {
-                return (0,1)
+                return (0, .outOfScopeError)
             }
             
             val2 = variables[varToBeReceived]!
@@ -183,13 +187,15 @@ class Compiler {
             var res : (Int, ErrorCode)
             res = evaluateMath(variables: variables, code: code[4] as! Code, startTime: startTime)
             
-            if (res.1 == 1) {
-                return (0, 1)
+            if(res.1 == .yesAnswer) {
+                return (0, .internalError)
+            } else if (res.1 != .noAnswer) {
+                return (0, res.1)
             }
             
             val2 = res.0
         default:
-            return (0, 1)
+            return (0, .missingBlocksError)
         }
         
         switch OpId {
@@ -202,24 +208,24 @@ class Compiler {
         case "/":
             
             if(val2 == 0) {
-                return (0,1)
+                return (0, .internalError)
             }
             
             retVal = val1 / val2
         case "%":
             retVal = val1 % val2
         default:
-            return (0, 1)
+            return (0, .internalError)
         }
         
-        return (retVal, 0)
+        return (retVal, .noAnswer)
     }
     
     // COMP{cOP_ID, val_type, VAR or NUM or MATH, val_type, VAR or NUM or MATH}
     func evaluateComp(variables : Variables, code: Code, startTime: TimeInterval) -> (Bool, ErrorCode) {
         
-        if(checkTimeout(startTime: startTime) == 1) {
-            return (false, 1)
+        if(checkTimeout(startTime: startTime) == .timeoutError) {
+            return (false, .timeoutError)
         }
         
         let OpId = code[0] as! String
@@ -235,7 +241,7 @@ class Compiler {
         case "VAR":
             let varToBeReceived : String = code[2] as! String
             if(variables[varToBeReceived] == nil) {
-                return (false,1)
+                return (false, .outOfScopeError)
             }
             val1 = variables[varToBeReceived]!
         case "NUM":
@@ -243,19 +249,21 @@ class Compiler {
         case "MATH":
             var res : (Int, ErrorCode)
             res = evaluateMath(variables: variables, code: code[2] as! Code, startTime: startTime)
-            if (res.1 == 1) {
-                return (false, 1)
+            if(res.1 == .yesAnswer) {
+                return (false, .internalError)
+            } else if (res.1 != .noAnswer) {
+                return (false, res.1)
             }
             val1 = res.0
         default:
-            return (false, 1)
+            return (false, .missingBlocksError)
         }
         
         switch valType2 {
         case "VAR":
             let varToBeReceived : String = code[4] as! String
             if(variables[varToBeReceived] == nil) {
-                return (false,1)
+                return (false, .outOfScopeError)
             }
             val2 = variables[varToBeReceived]!
         case "NUM":
@@ -263,12 +271,14 @@ class Compiler {
         case "MATH":
             var res : (Int, ErrorCode)
             res = evaluateMath(variables: variables, code: code[4] as! Code, startTime: startTime)
-            if (res.1 == 1) {
-                return (false, 1)
+            if(res.1 == .yesAnswer) {
+                return (false, .internalError)
+            } else if (res.1 != .noAnswer) {
+                return (false, res.1)
             }
             val2 = res.0
         default:
-            return (false, 1)
+            return (false, .missingBlocksError)
         }
         
         switch OpId {
@@ -285,30 +295,33 @@ class Compiler {
         case ">":
             retVal = (val1 > val2)
         default:
-            return (false,1)
+            return (false, .internalError)
         }
         
-        return (retVal, 0)
+        return (retVal, .noAnswer)
     }
     
     // IF{COMP, [Operations], comp_exists}
     func evaluateIf(variables : Variables, code: Code, startTime: TimeInterval) -> (Variables, ErrorCode) {
         
-        if(checkTimeout(startTime: startTime) == 1) {
-            return ([:], 1)
+        if(checkTimeout(startTime: startTime) == .timeoutError) {
+            return ([:], .timeoutError)
         }
         
         let comp_exists : Bool = code[2] as! Bool
         
         if(!comp_exists) {
-            return ([:], 1)
+            return ([:], .missingBlocksError)
         }
         
         var cRes : (Bool, ErrorCode)
         
         cRes = evaluateComp(variables : variables, code: code[0] as! Code, startTime: startTime)
-        if (cRes.1 == 1) {
-            return ([:], 1)
+        
+        if(cRes.1 == .yesAnswer) {
+            return ([:], .internalError)
+        } else if (cRes.1 != .noAnswer) {
+            return ([:], cRes.1)
         }
         
         let boolean = cRes.0
@@ -318,22 +331,24 @@ class Compiler {
         if(boolean) {
             var res : (Variables, ErrorCode)
             res = runCode(variables : variableUpdate, code : code[1] as! Code, startTime: startTime)
-            if (res.1 == 1) {
-                return ([:], 1)
+            if(res.1 == .yesAnswer) {
+                return (res.0, .yesAnswer)
+            } else if (res.1 != .noAnswer) {
+                return ([:], res.1)
             }
             variableUpdate = res.0
         }
         
         variableUpdate = fixScope(newVars: variableUpdate, oldVars: variables)
         
-        return (variableUpdate, 0)
+        return (variableUpdate, .noAnswer)
     }
     
     // FOR{val_type, VAR or NUM or MATH, [Operations]}
     func evaluateFor(variables : Variables, code: Code, startTime: TimeInterval) -> (Variables, ErrorCode) {
         
-        if(checkTimeout(startTime: startTime) == 1) {
-            return ([:], 1)
+        if(checkTimeout(startTime: startTime) == .timeoutError) {
+            return ([:], .timeoutError)
         }
         
         let valType : String = code[0] as! String
@@ -343,7 +358,7 @@ class Compiler {
         case "VAR":
             let varToBeReceived : String = code[1] as! String
             if(variables[varToBeReceived] == nil) {
-                return ([:],1)
+                return ([:], .outOfScopeError)
             }
             val = variables[varToBeReceived]!
         case "NUM":
@@ -351,45 +366,51 @@ class Compiler {
         case "MATH":
             var res : (Int, ErrorCode)
             res = evaluateMath(variables: variables, code: code[1] as! Code, startTime: startTime)
-            if (res.1 == 1) {
-                return ([:], 1)
+            
+            if(res.1 == .yesAnswer) {
+                return ([:], .internalError)
+            } else if (res.1 != .noAnswer) {
+                return ([:], res.1)
             }
+            
             val = res.0
         default:
-            return ([:],1)
+            return ([:], .missingBlocksError)
         }
         
         var variableUpdate = variables
         
         if(val < 0) {
-            return ([:], 1)
+            return ([:], .internalError)
         }
         
         for _ in 0..<val {
             var res : (Variables, ErrorCode)
             res = runCode(variables : variableUpdate, code : code[2] as! Code, startTime: startTime)
-            if (res.1 == 1) {
-                return ([:], 1)
+            if(res.1 == .yesAnswer) {
+                return (res.0, .yesAnswer)
+            } else if (res.1 != .noAnswer) {
+                return ([:], res.1)
             }
             variableUpdate = res.0
         }
         
         variableUpdate = fixScope(newVars: variableUpdate, oldVars: variables)
         
-        return (variableUpdate, 0)
+        return (variableUpdate, .noAnswer)
     }
     
     // WHILE{COMP, [Operations], comp_exists}
     func evaluateWhile(variables : Variables, code: Code, startTime: TimeInterval) -> (Variables, ErrorCode) {
         
-        if(checkTimeout(startTime: startTime) == 1) {
-            return ([:], 1)
+        if(checkTimeout(startTime: startTime) == .timeoutError) {
+            return ([:], .timeoutError)
         }
         
         let comp_exists : Bool = code[2] as! Bool
         
         if(!comp_exists) {
-            return ([:], 1)
+            return ([:], .missingBlocksError)
         }
         
         var variableUpdate = variables
@@ -399,8 +420,11 @@ class Compiler {
             var cRes : (Bool, ErrorCode)
             
             cRes = evaluateComp(variables : variableUpdate, code: code[0] as! Code, startTime: startTime)
-            if (cRes.1 == 1) {
-                return ([:], 1)
+            
+            if(cRes.1 == .yesAnswer) {
+                return ([:], .internalError)
+            } else if (cRes.1 != .noAnswer) {
+                return ([:], cRes.1)
             }
             
             let boolean = cRes.0
@@ -408,9 +432,13 @@ class Compiler {
             if(boolean) {
                 var res : (Variables, ErrorCode)
                 res = runCode(variables : variableUpdate, code : code[1] as! Code, startTime: startTime)
-                if (res.1 == 1) {
-                    return ([:], 1)
+                
+                if(res.1 == .yesAnswer) {
+                    return (res.0, .yesAnswer)
+                } else if (res.1 != .noAnswer) {
+                    return ([:], res.1)
                 }
+                
                 variableUpdate = res.0
             } else {
                 track = false
@@ -419,14 +447,14 @@ class Compiler {
         
         variableUpdate = fixScope(newVars: variableUpdate, oldVars: variables)
         
-        return (variableUpdate, 0)
+        return (variableUpdate, .noAnswer)
     }
     
     // SUBMIT{val_type, VAR or NUM or MATH}
     func evaluateSubmit(variables : Variables, code: Code, startTime: TimeInterval) -> (Variables, ErrorCode) {
         
-        if(checkTimeout(startTime: startTime) == 1) {
-            return ([:], 1)
+        if(checkTimeout(startTime: startTime) == .timeoutError) {
+            return ([:], .timeoutError)
         }
         
         var variablesUpdate = variables
@@ -440,14 +468,16 @@ class Compiler {
             
             res = evaluateSet(variables : variables, code : codeCopy, startTime: startTime)
             
-            if (res.1 == 1) {
-                return ([:], 1)
+            if(res.1 == .yesAnswer) {
+                return ([:], .internalError)
+            } else if (res.1 != .noAnswer) {
+                return ([:], res.1)
             }
             
             variablesUpdate = res.0
         }
         
-        return (variablesUpdate, 2)
+        return (variablesUpdate, .yesAnswer)
     }
     
 }

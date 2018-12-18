@@ -27,17 +27,17 @@ class Test {
             
             returnValue = compiler.runCode(variables: variables, code: code, startTime: NSDate().timeIntervalSince1970)
             
-            if(returnValue.1 != 0) {
-                return RunResult(error: 1, result: 0)
+            if(returnValue.1 != .yesAnswer) {
+                return RunResult(error: returnValue.1, result: 0)
             }
             
             variables = returnValue.0
             
             if(variables["SUBMIT"] == nil) {
-                return RunResult(error: 1, result: 0)
+                return RunResult(error: .internalError, result: 0)
             }
             
-            let result = RunResult(error: 0, result: variables["SUBMIT"]!) // Add error checking
+            let result = RunResult(error: .yesAnswer, result: variables["SUBMIT"]!)
             
             return result
         }
@@ -49,15 +49,15 @@ class Test {
         
         for (index, input) in levelInputs.enumerated() {
             let localResult : RunResult = runTestSub(input: input, code: code)
-            if(localResult.error != 0) {
+            if(localResult.error != .yesAnswer) {
                 return localResult.error
             }
             if(localResult.result != levelOutputs[index]) {
-                return 1
+                return .incorrectAnswer
             }
         }
         
-        return 0
+        return .yesAnswer
     }
     
 }

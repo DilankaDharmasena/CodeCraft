@@ -35,6 +35,7 @@
 		FA93B72821A4B9680053167D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA93B72621A4B9680053167D /* LaunchScreen.storyboard */; };
 		FA93B73321A4B9680053167D /* CodeCraftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93B73221A4B9680053167D /* CodeCraftTests.swift */; };
 		FA93B74221A4F74C0053167D /* LevelBubbleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93B74121A4F74C0053167D /* LevelBubbleCollectionViewCell.swift */; };
+		FA97FE0D21C9B51F008026CA /* UniversalStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97FE0C21C9B51F008026CA /* UniversalStrings.swift */; };
 		FACB979021BCA9E00022DA15 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB978F21BCA9E00022DA15 /* Block.swift */; };
 		FACB979221BCAD110022DA15 /* CodeEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB979121BCAD110022DA15 /* CodeEditor.swift */; };
 		FACB979421BCC18D0022DA15 /* CodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB979321BCC18D0022DA15 /* CodeModel.swift */; };
@@ -98,6 +99,7 @@
 		FA93B73221A4B9680053167D /* CodeCraftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeCraftTests.swift; sourceTree = "<group>"; };
 		FA93B73421A4B9680053167D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA93B74121A4F74C0053167D /* LevelBubbleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelBubbleCollectionViewCell.swift; sourceTree = "<group>"; };
+		FA97FE0C21C9B51F008026CA /* UniversalStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalStrings.swift; sourceTree = "<group>"; };
 		FACB978F21BCA9E00022DA15 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 		FACB979121BCAD110022DA15 /* CodeEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeEditor.swift; sourceTree = "<group>"; };
 		FACB979321BCC18D0022DA15 /* CodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeModel.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				FACB979E21BDDE5E0022DA15 /* Code */,
 				FACB979D21BDDE2C0022DA15 /* Level */,
 				FAF2D6EB21AB14AA006781DE /* UniversalTypeDefinitions.swift */,
+				FA97FE0C21C9B51F008026CA /* UniversalStrings.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 				FACB979421BCC18D0022DA15 /* CodeModel.swift in Sources */,
 				FACB979221BCAD110022DA15 /* CodeEditor.swift in Sources */,
 				FA93B71B21A4B9670053167D /* AppDelegate.swift in Sources */,
+				FA97FE0D21C9B51F008026CA /* UniversalStrings.swift in Sources */,
 				FACB979021BCA9E00022DA15 /* Block.swift in Sources */,
 				FACB979821BD55660022DA15 /* BlockEditViewController.swift in Sources */,
 				FA04D59521B9BFA400EA4F35 /* WhileBlock.swift in Sources */,

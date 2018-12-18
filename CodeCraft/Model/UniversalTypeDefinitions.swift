@@ -23,7 +23,9 @@ typealias Variables = [String : Int]
 
 typealias Code = [Any]
 
-typealias ErrorCode = Int // Convert to enum
+enum ErrorCode {
+    case noAnswer, yesAnswer, internalError, timeoutError, incorrectAnswer, missingBlocksError, outOfScopeError
+}
 
 typealias ParentLocation = [Int]?
 
@@ -40,6 +42,12 @@ enum InternalType {
 }
 
 struct BlockID {
+    
+    static var start : BlockID {
+        get {
+            return BlockID(parentType: .operationBlock, parentLocation: [], parentRelationship: .operation, internalType: .blankBlock, internalLocation: 0)
+        }
+    }
     
     func changeType(type: InternalType) -> BlockID {
         return BlockID(parentType: self.parentType, parentLocation: self.parentLocation, parentRelationship: self.parentRelationship, internalType: type, internalLocation: self.internalLocation)
