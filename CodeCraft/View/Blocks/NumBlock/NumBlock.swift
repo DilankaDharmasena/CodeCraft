@@ -16,6 +16,8 @@ class NumBlock: UIView, Block {
     
     @IBOutlet var contentView: UIView!
     
+    @IBOutlet var viewCollection: Array<UIView>!
+    
     @IBOutlet weak var numLabel: UILabel!
     
     override init(frame: CGRect) {
@@ -54,6 +56,10 @@ class NumBlock: UIView, Block {
     
     func setID(id: BlockID) {
         blockID = id
+    }
+    
+    func select() {
+        
     }
     
     @objc func handleSingleTap() {

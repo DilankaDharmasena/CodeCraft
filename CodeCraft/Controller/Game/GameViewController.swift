@@ -121,6 +121,7 @@ class GameViewController: UIViewController, CodeEditorDelegate, BlockEditorDeleg
     
     @objc func handleDoubleTap() {
         codeModel.currentBlock = BlockID.start
+        reloadView()
     }
     
     @objc func handleLongPress() {
@@ -134,7 +135,7 @@ class GameViewController: UIViewController, CodeEditorDelegate, BlockEditorDeleg
             sub.removeFromSuperview()
         }
         
-        let newView = codeTranslator.mainView(code: codeModel.currentCode)
+        let newView = codeTranslator.mainView(code: codeModel.currentCode, highlight: codeModel.currentBlock)
         
         scrollView.contentSize = newView.frame.size
         scrollView.addSubview(newView)
@@ -157,6 +158,7 @@ class GameViewController: UIViewController, CodeEditorDelegate, BlockEditorDeleg
     
     func setSelectedBlock(id: BlockID) {
         codeModel.currentBlock = id
+        reloadView()
     }
     
     func doneEditing(id: BlockID, data: Code, action: EditAction) {

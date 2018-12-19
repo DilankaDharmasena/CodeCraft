@@ -150,8 +150,8 @@
 		FA04D5A221BB570500EA4F35 /* VarBlock */ = {
 			isa = PBXGroup;
 			children = (
-				FA04D59E21BB56C700EA4F35 /* VarBlock.xib */,
 				FA04D59A21BB567600EA4F35 /* VarBlock.swift */,
+				FA04D59E21BB56C700EA4F35 /* VarBlock.xib */,
 			);
 			path = VarBlock;
 			sourceTree = "<group>";
@@ -222,8 +222,8 @@
 		FA04D5BA21BC3F3A00EA4F35 /* BlankBlock */ = {
 			isa = PBXGroup;
 			children = (
-				FA04D5BD21BC3F6C00EA4F35 /* BlankBlock.xib */,
 				FA04D5BF21BC3F8500EA4F35 /* BlankBlock.swift */,
+				FA04D5BD21BC3F6C00EA4F35 /* BlankBlock.xib */,
 			);
 			path = BlankBlock;
 			sourceTree = "<group>";

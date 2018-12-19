@@ -16,6 +16,8 @@ class ForBlock: UIView, Block {
 
     @IBOutlet var contentView: UIView!
     
+    @IBOutlet var viewCollection: Array<UIView>!
+    
     @IBOutlet weak var iterInputView: UIView!
     @IBOutlet weak var iterInputViewHeight: NSLayoutConstraint!
     @IBOutlet weak var iterInputViewWidth: NSLayoutConstraint!
@@ -80,6 +82,12 @@ class ForBlock: UIView, Block {
     
     func setID(id: BlockID) {
         blockID = id
+    }
+    
+    func select() {
+        for view in viewCollection {
+            view.backgroundColor = UIColor(red: 0.2, green: 0.3, blue: 0.3, alpha: 1.0)
+        }
     }
     
     @objc func handleSingleTap() {

@@ -16,6 +16,8 @@ class SubmitBlock: UIView, Block {
 
     @IBOutlet var contentView: UIView!
     
+    @IBOutlet var viewCollection: Array<UIView>!
+    
     @IBOutlet weak var valToSetView: UIView!
     @IBOutlet weak var valToSetViewHeight: NSLayoutConstraint!
     @IBOutlet weak var valToSetViewWidth: NSLayoutConstraint!
@@ -60,6 +62,12 @@ class SubmitBlock: UIView, Block {
     
     func setID(id: BlockID) {
         blockID = id
+    }
+    
+    func select() {
+        for view in viewCollection {
+            view.backgroundColor = UIColor(red: 0.2, green: 0.3, blue: 0.3, alpha: 1.0)
+        }
     }
     
     @objc func handleSingleTap() {

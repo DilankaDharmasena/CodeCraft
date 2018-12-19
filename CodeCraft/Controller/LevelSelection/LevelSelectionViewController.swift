@@ -13,6 +13,8 @@ class LevelSelectionViewController: UIViewController, UICollectionViewDataSource
     
     @IBOutlet weak var levelSelectionCollectionView: UICollectionView!
     
+    @IBOutlet weak var workshopButton: UIImageView!
+    
     let levelModelUtils = LevelModelUtils.shared
     
     let reuseIdentifier = "Level_Bubble"

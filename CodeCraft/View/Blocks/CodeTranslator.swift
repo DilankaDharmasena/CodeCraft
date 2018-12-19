@@ -18,7 +18,7 @@ class CodeTranslator {
         blockDelegate = editor
     }
     
-    func translateToBlocks(type: String, inputs: Code, currID: BlockID) -> UIView {
+    func translateToBlocks(type: String, inputs: Code, currID: BlockID, highlight: BlockID) -> UIView {
         switch type {
         case "WHILE":
             
@@ -34,17 +34,17 @@ class CodeTranslator {
             
             let comp_exists = inputs[2] as! Bool
             if(comp_exists) {
-                view1 = translateToBlocks(type: "COMP", inputs: inputs[0] as! Code, currID: view1ID)
+                view1 = translateToBlocks(type: "COMP", inputs: inputs[0] as! Code, currID: view1ID, highlight: highlight)
             } else {
-                view1 = translateToBlocks(type: "BLANK", inputs: [] as Code, currID: view1ID)
+                view1 = translateToBlocks(type: "BLANK", inputs: [] as Code, currID: view1ID, highlight: highlight)
             }
             
             if(currID.parentLocation == nil) {
-                views = parseOperations(code: inputs[1] as! Code, location: [currID.internalLocation, 1, 1])
+                views = parseOperations(code: inputs[1] as! Code, location: [currID.internalLocation, 1, 1], highlight: highlight)
             } else {
                 var updatedLocation = currID.parentLocation
                 updatedLocation?.append(contentsOf: [currID.internalLocation, 1, 1])
-                views = parseOperations(code: inputs[1] as! Code, location: updatedLocation)
+                views = parseOperations(code: inputs[1] as! Code, location: updatedLocation, highlight: highlight)
             }
             
             let size = blockDimensions.whileBlock(compView: view1, operations: views)
@@ -72,17 +72,17 @@ class CodeTranslator {
             let valType1 = inputs[0] as! String
             switch valType1 {
             case "MATH":
-                view1 = translateToBlocks(type: valType1, inputs: inputs[1] as! Code, currID: view1ID)
+                view1 = translateToBlocks(type: valType1, inputs: inputs[1] as! Code, currID: view1ID, highlight: highlight)
             default:
-                view1 = translateToBlocks(type: valType1, inputs: [inputs[1]], currID: view1ID)
+                view1 = translateToBlocks(type: valType1, inputs: [inputs[1]], currID: view1ID, highlight: highlight)
             }
             
             if(currID.parentLocation == nil) {
-                views = parseOperations(code: inputs[2] as! Code, location: [currID.internalLocation, 1, 2])
+                views = parseOperations(code: inputs[2] as! Code, location: [currID.internalLocation, 1, 2], highlight: highlight)
             } else {
                 var updatedLocation = currID.parentLocation
                 updatedLocation?.append(contentsOf: [currID.internalLocation, 1, 2])
-                views = parseOperations(code: inputs[2] as! Code, location: updatedLocation)
+                views = parseOperations(code: inputs[2] as! Code, location: updatedLocation, highlight: highlight)
             }
             
             let size = blockDimensions.forBlock(iterView: view1, operations: views)
@@ -108,17 +108,17 @@ class CodeTranslator {
             
             let comp_exists = inputs[2] as! Bool
             if(comp_exists) {
-                view1 = translateToBlocks(type: "COMP", inputs: inputs[0] as! Code, currID: view1ID)
+                view1 = translateToBlocks(type: "COMP", inputs: inputs[0] as! Code, currID: view1ID, highlight: highlight)
             } else {
-                view1 = translateToBlocks(type: "BLANK", inputs: [] as Code, currID: view1ID)
+                view1 = translateToBlocks(type: "BLANK", inputs: [] as Code, currID: view1ID, highlight: highlight)
             }
             
             if(currID.parentLocation == nil) {
-                views = parseOperations(code: inputs[1] as! Code, location: [currID.internalLocation, 1, 1])
+                views = parseOperations(code: inputs[1] as! Code, location: [currID.internalLocation, 1, 1], highlight: highlight)
             } else {
                 var updatedLocation = currID.parentLocation
                 updatedLocation?.append(contentsOf: [currID.internalLocation, 1, 1])
-                views = parseOperations(code: inputs[1] as! Code, location: updatedLocation)
+                views = parseOperations(code: inputs[1] as! Code, location: updatedLocation, highlight: highlight)
             }
             
             let size = blockDimensions.ifBlock(compView: view1, operations: views)
@@ -145,9 +145,9 @@ class CodeTranslator {
             let valType1 = inputs[0] as! String
             switch valType1 {
             case "MATH":
-                view1 = translateToBlocks(type: valType1, inputs: inputs[1] as! Code, currID: view1ID)
+                view1 = translateToBlocks(type: valType1, inputs: inputs[1] as! Code, currID: view1ID, highlight: highlight)
             default:
-                view1 = translateToBlocks(type: valType1, inputs: [inputs[1]], currID: view1ID)
+                view1 = translateToBlocks(type: valType1, inputs: [inputs[1]], currID: view1ID, highlight: highlight)
             }
             
             let size = blockDimensions.submitBlock(inputView: view1)
@@ -172,9 +172,9 @@ class CodeTranslator {
             
             let var_exists = inputs[3] as! Bool
             if(var_exists) {
-                view1 = translateToBlocks(type: "VAR", inputs: [inputs[0]], currID: view1ID)
+                view1 = translateToBlocks(type: "VAR", inputs: [inputs[0]], currID: view1ID, highlight: highlight)
             } else {
-                view1 = translateToBlocks(type: "BLANK", inputs: [] as Code, currID: view1ID)
+                view1 = translateToBlocks(type: "BLANK", inputs: [] as Code, currID: view1ID, highlight: highlight)
             }
             
             let view2ID = BlockID(parentType: .setBlock, parentLocation: parentLocation, parentRelationship: .secondInput, internalType: nil, internalLocation: -1)
@@ -182,9 +182,9 @@ class CodeTranslator {
             let valType1 = inputs[1] as! String
             switch valType1 {
             case "MATH":
-                view2 = translateToBlocks(type: valType1, inputs: inputs[2] as! Code, currID: view2ID)
+                view2 = translateToBlocks(type: valType1, inputs: inputs[2] as! Code, currID: view2ID, highlight: highlight)
             default:
-                view2 = translateToBlocks(type: valType1, inputs: [inputs[2]], currID: view2ID)
+                view2 = translateToBlocks(type: valType1, inputs: [inputs[2]], currID: view2ID, highlight: highlight)
             }
             
             let size = blockDimensions.setBlock(varView: view1, valView: view2)
@@ -212,18 +212,18 @@ class CodeTranslator {
             
             switch valType1 {
             case "MATH":
-                view1 = translateToBlocks(type: valType1, inputs: inputs[2] as! Code, currID: view1ID)
+                view1 = translateToBlocks(type: valType1, inputs: inputs[2] as! Code, currID: view1ID, highlight: highlight)
             default:
-                view1 = translateToBlocks(type: valType1, inputs: [inputs[2]], currID: view1ID)
+                view1 = translateToBlocks(type: valType1, inputs: [inputs[2]], currID: view1ID, highlight: highlight)
             }
             
             let view2ID = BlockID(parentType: .compBlock, parentLocation: parentLocation, parentRelationship: .secondInput, internalType: nil, internalLocation: -1)
             
             switch valType2 {
             case "MATH":
-                view2 = translateToBlocks(type: valType2, inputs: inputs[4] as! Code, currID: view2ID)
+                view2 = translateToBlocks(type: valType2, inputs: inputs[4] as! Code, currID: view2ID, highlight: highlight)
             default:
-                view2 = translateToBlocks(type: valType2, inputs: [inputs[4]], currID: view2ID)
+                view2 = translateToBlocks(type: valType2, inputs: [inputs[4]], currID: view2ID, highlight: highlight)
             }
             
             let size = blockDimensions.compBlock(firstInputView: view1, secondInputView: view2)
@@ -265,18 +265,18 @@ class CodeTranslator {
             
             switch valType1 {
             case "MATH":
-                view1 = translateToBlocks(type: valType1, inputs: inputs[2] as! Code, currID: view1ID)
+                view1 = translateToBlocks(type: valType1, inputs: inputs[2] as! Code, currID: view1ID, highlight: highlight)
             default:
-                view1 = translateToBlocks(type: valType1, inputs: [inputs[2]], currID: view1ID)
+                view1 = translateToBlocks(type: valType1, inputs: [inputs[2]], currID: view1ID, highlight: highlight)
             }
             
             let view2ID = BlockID(parentType: .mathBlock, parentLocation: parentLocation, parentRelationship: .secondInput, internalType: nil, internalLocation: -1)
             
             switch valType2 {
             case "MATH":
-                view2 = translateToBlocks(type: valType2, inputs: inputs[4] as! Code, currID: view2ID)
+                view2 = translateToBlocks(type: valType2, inputs: inputs[4] as! Code, currID: view2ID, highlight: highlight)
             default:
-                view2 = translateToBlocks(type: valType2, inputs: [inputs[4]], currID: view2ID)
+                view2 = translateToBlocks(type: valType2, inputs: [inputs[4]], currID: view2ID, highlight: highlight)
             }
             
             let size = blockDimensions.mathBlock(firstInputView: view1, secondInputView: view2)
@@ -325,13 +325,13 @@ class CodeTranslator {
     }
     
     
-    func parseOperations(code: Code, location : ParentLocation) -> [UIView] {
+    func parseOperations(code: Code, location : ParentLocation, highlight: BlockID) -> [UIView] {
         
         var views : [UIView] = []
         
         if(code.isEmpty) {
             let currID = BlockID(parentType: .operationBlock, parentLocation: location, parentRelationship: .operation, internalType: nil, internalLocation: 0)
-            views.append(translateToBlocks(type: "BLANK", inputs: [] as Code, currID: currID))
+            views.append(translateToBlocks(type: "BLANK", inputs: [] as Code, currID: currID, highlight: highlight))
         } else {
         
             for (index, line) in code.enumerated() {
@@ -342,7 +342,14 @@ class CodeTranslator {
                 
                 let currID = BlockID(parentType: .operationBlock, parentLocation: location, parentRelationship: .operation, internalType: nil, internalLocation: index)
                 
-                views.append(translateToBlocks(type: operation, inputs: inputs, currID: currID))
+                let newView = translateToBlocks(type: operation, inputs: inputs, currID: currID, highlight: highlight)
+                
+                if((currID == highlight.changeType(type: nil)) && (highlight.internalType != .blankBlock)) {
+                    let newBlock = newView as! Block
+                    newBlock.select()
+                }
+                
+                views.append(newView)
             }
             
         }
@@ -351,9 +358,9 @@ class CodeTranslator {
         
     }
     
-    func mainView(code : Code) -> UIStackView {
+    func mainView(code : Code, highlight: BlockID) -> UIStackView {
         
-        let views = parseOperations(code: code, location: [])
+        let views = parseOperations(code: code, location: [], highlight: highlight)
         let size = blockDimensions.mainView(views: views)
         let frame = CGRect(origin: CGPoint.zero, size: size)
         let stackView = UIStackView(frame: frame)

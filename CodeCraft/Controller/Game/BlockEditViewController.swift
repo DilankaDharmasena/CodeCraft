@@ -159,17 +159,25 @@ class BlockEditViewController: UIViewController, UIPickerViewDataSource, UIPicke
         }
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let label = (view as? UILabel) ?? UILabel()
+        label.textColor = .black
+        label.textAlignment = .center
+        label.font = UIFont(name: "Futura", size: 17)
+        
         switch blockID.internalType! {
         case .compBlock:
-            return ValidInputs().comparisons[row]
+            label.text = ValidInputs().comparisons[row]
         case .mathBlock:
-            return ValidInputs().math[row]
+            label.text = ValidInputs().math[row]
         case .varBlock:
-            return ValidInputs().variables[row]
+            label.text = ValidInputs().variables[row]
         default:
-            return nil
+            label.text = ""
         }
+        
+        return label
+        
     }
     
     

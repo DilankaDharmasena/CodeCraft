@@ -16,6 +16,8 @@ class BlankBlock: UIView, Block {
 
     @IBOutlet var contentView: UIView!
     
+    @IBOutlet var viewCollection: Array<UIView>!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
@@ -48,6 +50,10 @@ class BlankBlock: UIView, Block {
     
     func setID(id: BlockID) {
         blockID = id
+    }
+    
+    func select() {
+        
     }
     
     @objc func handleSingleTap() {

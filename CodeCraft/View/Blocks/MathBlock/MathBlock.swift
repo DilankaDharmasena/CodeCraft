@@ -16,6 +16,8 @@ class MathBlock: UIView, Block {
 
     @IBOutlet var contentView: UIView!
     
+    @IBOutlet var viewCollection: Array<UIView>!
+    
     @IBOutlet weak var mathLabel: UILabel!
     
     @IBOutlet weak var firstInputView: UIView!
@@ -80,6 +82,10 @@ class MathBlock: UIView, Block {
     
     func setID(id: BlockID) {
         blockID = id
+    }
+    
+    func select() {
+        
     }
     
     @objc func handleSingleTap() {

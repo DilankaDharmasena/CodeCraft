@@ -41,7 +41,7 @@ enum InternalType {
     case whileBlock, forBlock, ifBlock, submitBlock, setBlock, compBlock, mathBlock, blankBlock, numBlock, varBlock
 }
 
-struct BlockID {
+struct BlockID : Equatable {
     
     static var start : BlockID {
         get {
@@ -49,15 +49,19 @@ struct BlockID {
         }
     }
     
-    func changeType(type: InternalType) -> BlockID {
-        return BlockID(parentType: self.parentType, parentLocation: self.parentLocation, parentRelationship: self.parentRelationship, internalType: type, internalLocation: self.internalLocation)
-    }
-    
     let parentType : ParentType
     let parentLocation : ParentLocation
     let parentRelationship : ParentRelationship
     let internalType : InternalType!
     let internalLocation : Int
+    
+    func changeType(type: InternalType?) -> BlockID {
+        return BlockID(parentType: self.parentType, parentLocation: self.parentLocation, parentRelationship: self.parentRelationship, internalType: type, internalLocation: self.internalLocation)
+    }
+    
+    static func ==(lhs: BlockID, rhs: BlockID) -> Bool {
+        return lhs.parentType == rhs.parentType && lhs.parentLocation == rhs.parentLocation && lhs.parentRelationship == rhs.parentRelationship && lhs.internalType == rhs.internalType && lhs.internalLocation == rhs.internalLocation
+    }
 }
 
 enum EditAction {

@@ -16,6 +16,8 @@ class WhileBlock: UIView, Block {
     
     @IBOutlet var contentView: UIView!
     
+    @IBOutlet var viewCollection: Array<UIView>!
+    
     @IBOutlet weak var compView: UIView!
     @IBOutlet weak var compViewHeight: NSLayoutConstraint!
     @IBOutlet weak var compViewWidth: NSLayoutConstraint!
@@ -52,6 +54,7 @@ class WhileBlock: UIView, Block {
         singleTap.require(toFail: doubleTap)
         self.addGestureRecognizer(doubleTap)
         self.addGestureRecognizer(singleTap)
+        
     }
     
     func addComp(newView : UIView) {
@@ -80,6 +83,12 @@ class WhileBlock: UIView, Block {
     
     func setID(id: BlockID) {
         blockID = id
+    }
+    
+    func select() {
+        for view in viewCollection {
+            view.backgroundColor = UIColor(red: 0.2, green: 0.3, blue: 0.3, alpha: 1.0)
+        }
     }
     
     @objc func handleSingleTap() {

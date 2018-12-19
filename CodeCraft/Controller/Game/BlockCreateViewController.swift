@@ -88,9 +88,17 @@ class BlockCreateViewController: UIViewController, BlockEditorDelegate, UIPicker
         return vals.1.count
     }
     
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let label = (view as? UILabel) ?? UILabel()
+        label.textColor = .black
+        label.textAlignment = .center
+        label.font = UIFont(name: "Futura", size: 17)
+        
         let vals = ValidInputs().blocks(id: currID)
-        return vals.1[row]
+        label.text = vals.1[row]
+        
+        return label
+        
     }
     
 }

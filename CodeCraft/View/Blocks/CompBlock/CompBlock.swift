@@ -16,6 +16,8 @@ class CompBlock: UIView, Block {
 
     @IBOutlet var contentView: UIView!
     
+    @IBOutlet var viewCollection: Array<UIView>!
+    
     @IBOutlet weak var compLabel: UILabel!
     
     @IBOutlet weak var firstInputView: UIView!
@@ -80,6 +82,10 @@ class CompBlock: UIView, Block {
     
     func setID(id: BlockID) {
         blockID = id
+    }
+    
+    func select() {
+        
     }
     
     @objc func handleSingleTap() {

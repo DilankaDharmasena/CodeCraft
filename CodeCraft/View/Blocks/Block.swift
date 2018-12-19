@@ -28,4 +28,6 @@ protocol Block {
     
     func handleDoubleTap()
     
+    func select()
+    
 }
