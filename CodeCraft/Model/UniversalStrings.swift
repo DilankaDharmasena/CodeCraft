@@ -10,6 +10,20 @@ import Foundation
 
 class UniversalStrings {
     
+    let compLabel : String = "Comparison"
+    
+    let mathLabel : String = "Operation"
+    
+    let varLabel : String = "Variable"
+    
+    let numLabel : String = "Integer"
+    
+    let yesMessage : String = "You Got It!"
+    
+    let noMessage : String = "So Close"
+    
+    let invalidInputNumberMessage : [String] = ["Invalid Input", "Enter a valid number"]
+    
     let blockNames : [InternalType:String] =
     [
         .whileBlock : "While Loop",

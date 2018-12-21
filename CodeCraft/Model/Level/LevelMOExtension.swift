@@ -13,15 +13,24 @@ extension LevelMO {
     
     var formattedOutputs : [Int] {
         get {
-            let formattedOutputs = self.outputs!.components(separatedBy: " ")
+            let formattedOutputs = self.outputs!.components(separatedBy: " : ")
             return formattedOutputs.map({ Int($0)! })
         }
     }
     
-    var formattedInputs : [Int] {
+    var formattedInputs : [[Int]] {
         get {
-            let formattedInputs = self.inputs!.components(separatedBy: " ")
-            return formattedInputs.map({ Int($0)! })
+            
+            var returnVals : [[Int]] = []
+            
+            let inputLayers = self.inputs!.components(separatedBy: " : ")
+            
+            for layer in inputLayers {
+                let formattedInputs = layer.components(separatedBy: ",")
+                returnVals.append(formattedInputs.map({ Int($0)! }))
+            }
+            
+            return returnVals
         }
     }
     

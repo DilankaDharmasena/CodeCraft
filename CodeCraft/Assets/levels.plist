@@ -10,9 +10,9 @@
 		<key>prompt</key>
 		<string>What is the minimum number of coins it would take to make change for any amount of money (in cents) with coins worth 1, 5, 10, and 25 cents?</string>
 		<key>inputs</key>
-		<string>3 15 25 100</string>
+		<string>3 : 15 : 25 : 100</string>
 		<key>outputs</key>
-		<string>3 2 1 4</string>
+		<string>3 : 2 : 1 : 4</string>
 	</dict>
 	<dict>
 		<key>id</key>
@@ -20,11 +20,11 @@
 		<key>status</key>
 		<integer>0</integer>
 		<key>prompt</key>
-		<string>Use a loop to calculate INPUT to the fifth power</string>
+		<string>Calculate the first input to the second input (exponents)</string>
 		<key>inputs</key>
-		<string>2 5</string>
+		<string>2,3 : 5,5</string>
 		<key>outputs</key>
-		<string>32 3125</string>
+		<string>8 : 3125</string>
 	</dict>
 	<dict>
 		<key>id</key>
@@ -32,11 +32,11 @@
 		<key>status</key>
 		<integer>0</integer>
 		<key>prompt</key>
-		<string>Submit 0 if INPUT is equal to 10, otherwise submit 1</string>
+		<string>Submit 0 if the input is equal to 10, otherwise submit 1</string>
 		<key>inputs</key>
-		<string>1 10 3 10 15</string>
+		<string>1 : 10 : 3 : 10 : 15</string>
 		<key>outputs</key>
-		<string>1 0 1 0 1</string>
+		<string>1 : 0 : 1 : 0 : 1</string>
 	</dict>
 	<dict>
 		<key>id</key>
@@ -44,11 +44,11 @@
 		<key>status</key>
 		<integer>0</integer>
 		<key>prompt</key>
-		<string>Submit the square of INPUT</string>
+		<string>Submit the square of the input</string>
 		<key>inputs</key>
-		<string>0 2 5</string>
+		<string>0 : 2 : 5</string>
 		<key>outputs</key>
-		<string>0 4 25</string>
+		<string>0 : 4 : 25</string>
 	</dict>
 	<dict>
 		<key>id</key>
@@ -56,11 +56,11 @@
 		<key>status</key>
 		<integer>0</integer>
 		<key>prompt</key>
-		<string>The answer is the variable INPUT</string>
+		<string>The answer is the input</string>
 		<key>inputs</key>
-		<string>1 2 30 400</string>
+		<string>1 : 2 : 30 : 400</string>
 		<key>outputs</key>
-		<string>1 2 30 400</string>
+		<string>1 : 2 : 30 : 400</string>
 	</dict>
 </array>
 </plist>

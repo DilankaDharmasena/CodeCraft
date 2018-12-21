@@ -17,7 +17,7 @@ class LevelBubbleCollectionViewCell: UICollectionViewCell {
     
     func configure(levelNumber: Int, levelStatus: Int) {
         
-        var bubbleImageName = String()
+        var bubbleImageName : String
         
         switch levelStatus {
         case 1:

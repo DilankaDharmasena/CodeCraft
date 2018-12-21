@@ -11,11 +11,9 @@ import CoreData
 
 class LevelModelUtils {
     
-    static let shared = LevelModelUtils()
-    
     let dataManager = DataManager.shared
     
-    private init() {}
+    init() {}
     
     //* Queries
     

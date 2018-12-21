@@ -75,7 +75,7 @@
                                     <constraint firstAttribute="height" constant="55" id="763-FQ-TCk"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="workshop" translatesAutoresizingMaskIntoConstraints="NO" id="5Gx-I5-4yH">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="workshop" translatesAutoresizingMaskIntoConstraints="NO" id="5Gx-I5-4yH">
                                 <rect key="frame" x="280" y="577" width="75" height="75"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="75" id="HVK-aB-k1E"/>

@@ -10,8 +10,10 @@ import Foundation
 
 class Compiler {
     
+    let date = NSDate()
+    
     func checkTimeout(startTime: TimeInterval) -> ErrorCode {
-        let currTime = NSDate().timeIntervalSince1970
+        let currTime = date.timeIntervalSince1970
         
         if(startTime + 10 < currTime) {
             return .timeoutError

@@ -15,14 +15,13 @@ class LevelSelectionViewController: UIViewController, UICollectionViewDataSource
     
     @IBOutlet weak var workshopButton: UIImageView!
     
-    let levelModelUtils = LevelModelUtils.shared
+    let levelModelUtils = LevelModelUtils()
     
     let reuseIdentifier = "Level_Bubble"
     
     required init?(coder aDecoder: NSCoder) {
         
-        let levelLoader = LevelLoader() // Should be put in separate place
-        levelLoader.updateLevels()      // that checks if recently updated
+        LevelLoader().updateLevels() // Should be put in separate place that checks if recently updated
         
         super.init(coder: aDecoder)
     }
@@ -33,7 +32,19 @@ class LevelSelectionViewController: UIViewController, UICollectionViewDataSource
         levelSelectionCollectionView.dataSource = self
         levelSelectionCollectionView.delegate = self
         
+        let tapWorkshop = UITapGestureRecognizer(target: self, action: #selector(openWorkshop))
+        tapWorkshop.numberOfTapsRequired = 1
+        workshopButton.addGestureRecognizer(tapWorkshop)
+        
     }
+    
+    // Misc
+    
+    @objc func openWorkshop() {
+        print("Weee")
+    }
+    
+    // Collection View
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1 // Permanent
@@ -64,9 +75,13 @@ class LevelSelectionViewController: UIViewController, UICollectionViewDataSource
         
     }
     
+    // Game Delegate
+    
     func reloadScreen() {
         levelSelectionCollectionView.reloadData()
     }
+    
+    // Status Bar
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent

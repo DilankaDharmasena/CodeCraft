@@ -10,6 +10,9 @@ import Foundation
 
 class CodeModel {
     
+    var codeHistory : [(Code, BlockID)] = [([], BlockID.start)]
+    var codeIndex = 0
+    
     var currentCode : Code {
         get {
             return codeHistory[codeIndex].0
@@ -31,10 +34,6 @@ class CodeModel {
         }
         
     }
-    
-    
-    var codeHistory : [(Code, BlockID)] = [([], BlockID.start)]
-    var codeIndex = 0
     
     init(code : Code, block: BlockID) {
         if(!code.isEmpty) {

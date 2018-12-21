@@ -20,7 +20,7 @@ class LevelLoader {
     
     typealias LevelsPList = [LevelPList]
     
-    let levelModelUtils = LevelModelUtils.shared
+    let levelModelUtils = LevelModelUtils()
     
     init() {}
     

@@ -36,6 +36,7 @@
 		FA93B73321A4B9680053167D /* CodeCraftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93B73221A4B9680053167D /* CodeCraftTests.swift */; };
 		FA93B74221A4F74C0053167D /* LevelBubbleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93B74121A4F74C0053167D /* LevelBubbleCollectionViewCell.swift */; };
 		FA97FE0D21C9B51F008026CA /* UniversalStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97FE0C21C9B51F008026CA /* UniversalStrings.swift */; };
+		FA97FE1121CC3A52008026CA /* CodingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97FE1021CC3A52008026CA /* CodingViewController.swift */; };
 		FACB979021BCA9E00022DA15 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB978F21BCA9E00022DA15 /* Block.swift */; };
 		FACB979221BCAD110022DA15 /* CodeEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB979121BCAD110022DA15 /* CodeEditor.swift */; };
 		FACB979421BCC18D0022DA15 /* CodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB979321BCC18D0022DA15 /* CodeModel.swift */; };
@@ -100,6 +101,7 @@
 		FA93B73421A4B9680053167D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA93B74121A4F74C0053167D /* LevelBubbleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelBubbleCollectionViewCell.swift; sourceTree = "<group>"; };
 		FA97FE0C21C9B51F008026CA /* UniversalStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalStrings.swift; sourceTree = "<group>"; };
+		FA97FE1021CC3A52008026CA /* CodingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingViewController.swift; sourceTree = "<group>"; };
 		FACB978F21BCA9E00022DA15 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 		FACB979121BCAD110022DA15 /* CodeEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeEditor.swift; sourceTree = "<group>"; };
 		FACB979321BCC18D0022DA15 /* CodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeModel.swift; sourceTree = "<group>"; };
@@ -294,7 +296,8 @@
 		FA93B73F21A4F05C0053167D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				FAF2D6BC21A8E9FE006781DE /* Game */,
+				FA97FE0E21CC36A3008026CA /* Editing */,
+				FAF2D6BC21A8E9FE006781DE /* Coding */,
 				FAF2D67F21A78539006781DE /* LevelSelection */,
 			);
 			path = Controller;
@@ -307,6 +310,31 @@
 				FAF2D68521A7A2B2006781DE /* levels.plist */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		FA97FE0E21CC36A3008026CA /* Editing */ = {
+			isa = PBXGroup;
+			children = (
+				FACB979721BD55660022DA15 /* BlockEditViewController.swift */,
+				FACB979B21BD86920022DA15 /* BlockCreateViewController.swift */,
+			);
+			path = Editing;
+			sourceTree = "<group>";
+		};
+		FA97FE0F21CC36DC008026CA /* Workshop */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Workshop;
+			sourceTree = "<group>";
+		};
+		FA97FE1221CC5941008026CA /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				FAF2D6BD21A8EAA3006781DE /* GameViewController.swift */,
+				FACB97A021BDE8800022DA15 /* TaskViewController.swift */,
+			);
+			path = Game;
 			sourceTree = "<group>";
 		};
 		FACB979D21BDDE2C0022DA15 /* Level */ = {
@@ -356,15 +384,14 @@
 			path = LevelSelection;
 			sourceTree = "<group>";
 		};
-		FAF2D6BC21A8E9FE006781DE /* Game */ = {
+		FAF2D6BC21A8E9FE006781DE /* Coding */ = {
 			isa = PBXGroup;
 			children = (
-				FAF2D6BD21A8EAA3006781DE /* GameViewController.swift */,
-				FACB979721BD55660022DA15 /* BlockEditViewController.swift */,
-				FACB979B21BD86920022DA15 /* BlockCreateViewController.swift */,
-				FACB97A021BDE8800022DA15 /* TaskViewController.swift */,
+				FA97FE1221CC5941008026CA /* Game */,
+				FA97FE0F21CC36DC008026CA /* Workshop */,
+				FA97FE1021CC3A52008026CA /* CodingViewController.swift */,
 			);
-			path = Game;
+			path = Coding;
 			sourceTree = "<group>";
 		};
 		FAF2D6C321A91211006781DE /* Blocks */ = {
@@ -531,6 +558,7 @@
 				FAEAA4F521AF52B5002EDEBF /* Compiler.swift in Sources */,
 				FAEAA4F921AF5B96002EDEBF /* CodeTranslator.swift in Sources */,
 				FA04D58F21B9BF1C00EA4F35 /* SubmitBlock.swift in Sources */,
+				FA97FE1121CC3A52008026CA /* CodingViewController.swift in Sources */,
 				FAF2D6BB21A7BC40006781DE /* LevelModelUtils.swift in Sources */,
 				FACB979A21BD65C10022DA15 /* ValidInputs.swift in Sources */,
 			);

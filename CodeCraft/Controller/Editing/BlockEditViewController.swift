@@ -24,9 +24,13 @@ class BlockEditViewController: UIViewController, UIPickerViewDataSource, UIPicke
     @IBOutlet weak var viewHeight: NSLayoutConstraint!
     
     var blockID : BlockID!
-    var data : Code!
+    var data : Code = []
+    var numVars : Int = 0
     
     var delegate : BlockEditorDelegate!
+    
+    let validInputs = ValidInputs()
+    let universalStrings = UniversalStrings()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,16 +48,16 @@ class BlockEditViewController: UIViewController, UIPickerViewDataSource, UIPicke
             
         case .compBlock:
             textField.isHidden = true
-            editLabel.text = "Comparison"
+            editLabel.text = universalStrings.compLabel
         case .mathBlock:
             textField.isHidden = true
-            editLabel.text = "Operation"
+            editLabel.text = universalStrings.mathLabel
         case .varBlock:
             textField.isHidden = true
-            editLabel.text = "Variable"
+            editLabel.text = universalStrings.varLabel
         case .numBlock:
             picker.isHidden = true
-            editLabel.text = "Integer"
+            editLabel.text = universalStrings.numLabel
         default:
             // not possible
             break
@@ -65,16 +69,21 @@ class BlockEditViewController: UIViewController, UIPickerViewDataSource, UIPicke
             switch blockID.internalType! {
             case .compBlock:
                 let comp = data[0] as! String
-                let index = ValidInputs().comparisons.index(of: comp)
+                let index = validInputs.comparisons.index(of: comp)
                 picker.selectRow(index!, inComponent: 0, animated: false)
             case .mathBlock:
                 let math = data[0] as! String
-                let index = ValidInputs().math.index(of: math)
+                let index = validInputs.math.index(of: math)
                 picker.selectRow(index!, inComponent: 0, animated: false)
             case .varBlock:
                 let variable = data[0] as! String
-                let index = ValidInputs().variables.index(of: variable)
-                picker.selectRow(index!, inComponent: 0, animated: false)
+                var index : Int
+                if(variable.count == 1) {
+                    index = validInputs.variables.index(of: variable)! + numVars
+                } else {
+                    index = Int(String(variable.last!))! - 1
+                }
+                picker.selectRow(index, inComponent: 0, animated: false)
             case .numBlock:
                 let num = data[0] as! Int
                 textField.text = String(num)
@@ -85,11 +94,12 @@ class BlockEditViewController: UIViewController, UIPickerViewDataSource, UIPicke
         }
     }
     
-    func configure(id : BlockID, data lData: Code, delegate lDelegate : BlockEditorDelegate) {
+    func configure(id : BlockID, data lData: Code, numVariables: Int, delegate lDelegate : BlockEditorDelegate) {
         
         blockID = id
         delegate = lDelegate
         data = lData
+        numVars = numVariables
         
     }
 
@@ -102,15 +112,20 @@ class BlockEditViewController: UIViewController, UIPickerViewDataSource, UIPicke
         switch blockID.internalType! {
         case .compBlock:
             let index = picker.selectedRow(inComponent: 0)
-            let input = ValidInputs().comparisons[index]
+            let input = validInputs.comparisons[index]
             dismiss(animated: false, completion: {self.delegate.doneEditing(id: self.blockID, data: [input] as Code, action: .modify)})
         case .mathBlock:
             let index = picker.selectedRow(inComponent: 0)
-            let input = ValidInputs().math[index]
+            let input = validInputs.math[index]
             dismiss(animated: false, completion: {self.delegate.doneEditing(id: self.blockID, data: [input] as Code, action: .modify)})
         case .varBlock:
             let index = picker.selectedRow(inComponent: 0)
-            let input = ValidInputs().variables[index]
+            var input : String
+            if(index < numVars) {
+                input = String(format: "INPUT_%d", index + 1)
+            } else {
+                input = validInputs.variables[index - numVars]
+            }
             dismiss(animated: false, completion: {self.delegate.doneEditing(id: self.blockID, data: [input] as Code, action: .modify)})
         case .numBlock:
             var invalid = true
@@ -118,14 +133,14 @@ class BlockEditViewController: UIViewController, UIPickerViewDataSource, UIPicke
             let input = textField.text!
             let convertedInput = Int(input)
             if let num = convertedInput {
-                if(abs(num) <= ValidInputs().num) {
+                if(abs(num) <= validInputs.num) {
                     invalid = false
                     dismiss(animated: false, completion: {self.delegate.doneEditing(id: self.blockID, data: [num] as Code, action: .modify)})
                 }
             }
             
             if(invalid) {
-                let alert = UIAlertController(title: "Invalid Input", message: "Enter a valid number", preferredStyle: .alert)
+                let alert = UIAlertController(title: universalStrings.invalidInputNumberMessage[0], message: universalStrings.invalidInputNumberMessage[1], preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 alert.modalPresentationStyle = .overCurrentContext
                 self.present(alert, animated: true, completion: nil)
@@ -142,6 +157,8 @@ class BlockEditViewController: UIViewController, UIPickerViewDataSource, UIPicke
         dismiss(animated: false, completion: {self.delegate.doneEditing(id: self.blockID, data: self.data, action: .delete)})
     }
     
+    // Picker
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -149,11 +166,11 @@ class BlockEditViewController: UIViewController, UIPickerViewDataSource, UIPicke
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch blockID.internalType! {
         case .compBlock:
-            return ValidInputs().comparisons.count
+            return validInputs.comparisons.count
         case .mathBlock:
-            return ValidInputs().math.count
+            return validInputs.math.count
         case .varBlock:
-            return ValidInputs().variables.count
+            return validInputs.variables.count + numVars
         default:
             return 0
         }
@@ -167,11 +184,15 @@ class BlockEditViewController: UIViewController, UIPickerViewDataSource, UIPicke
         
         switch blockID.internalType! {
         case .compBlock:
-            label.text = ValidInputs().comparisons[row]
+            label.text = validInputs.comparisons[row]
         case .mathBlock:
-            label.text = ValidInputs().math[row]
+            label.text = validInputs.math[row]
         case .varBlock:
-            label.text = ValidInputs().variables[row]
+            if(row < numVars) {
+                label.text = String(format: "INPUT_%d", row + 1)
+            } else {
+                label.text = validInputs.variables[row - numVars]
+            }
         default:
             label.text = ""
         }

@@ -94,8 +94,6 @@ class BlockDimensions {
         }
         
         return CGSize(width: width, height: height)
-        
-        //return calculateBlockSize(dividers: 0, operations: views)
     }
     
 }

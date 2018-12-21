@@ -12,7 +12,7 @@ class ValidInputs {
     
     let comparisons : [String] = ["==", "!=", "<=", ">=", "<", ">"]
     let math : [String] = ["+", "-", "*", "/", "%"]
-    let variables : [String] = ["INPUT", "A", "B", "C", "D", "E" , "F"]
+    let variables : [String] = ["A", "B", "C", "D", "E" , "F"]
     let num : Int = 2147483647
     
     let blockNames : [InternalType:String] = UniversalStrings().blockNames

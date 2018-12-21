@@ -16,6 +16,9 @@ class BlockCreateViewController: UIViewController, BlockEditorDelegate, UIPicker
     
     var delegate : BlockCreatorDelegate!
     var currID : BlockID!
+    var numVars : Int = 0
+    
+    let validInputs = ValidInputs()
 
     @IBOutlet weak var picker: UIPickerView!
     
@@ -29,9 +32,10 @@ class BlockCreateViewController: UIViewController, BlockEditorDelegate, UIPicker
     
     // Local
     
-    func configure(currID lCurrID: BlockID, delegate lDelegate : BlockCreatorDelegate) {
+    func configure(currID lCurrID: BlockID, numVariables: Int, delegate lDelegate : BlockCreatorDelegate) {
         currID = lCurrID
         delegate = lDelegate
+        numVars = numVariables
     }
     
     // Buttons
@@ -42,7 +46,7 @@ class BlockCreateViewController: UIViewController, BlockEditorDelegate, UIPicker
     
     @IBAction func addTapped(_ sender: UIButton) {
         let index = picker.selectedRow(inComponent: 0)
-        let input = ValidInputs().blocks(id: currID).0[index]
+        let input = validInputs.blocks(id: currID).0[index]
         
         switch input {
         case .compBlock, .mathBlock, .varBlock, .numBlock:
@@ -51,7 +55,7 @@ class BlockCreateViewController: UIViewController, BlockEditorDelegate, UIPicker
             
             let viewController = storyboard?.instantiateViewController(withIdentifier: "blockEditScene") as! BlockEditViewController
             viewController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
-            viewController.configure(id: newID, data: [], delegate: self)
+            viewController.configure(id: newID, data: [], numVariables: numVars, delegate: self)
             present(viewController, animated: false, completion: nil)
             
             
@@ -84,7 +88,7 @@ class BlockCreateViewController: UIViewController, BlockEditorDelegate, UIPicker
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        let vals = ValidInputs().blocks(id: currID)
+        let vals = validInputs.blocks(id: currID)
         return vals.1.count
     }
     
@@ -94,7 +98,7 @@ class BlockCreateViewController: UIViewController, BlockEditorDelegate, UIPicker
         label.textAlignment = .center
         label.font = UIFont(name: "Futura", size: 17)
         
-        let vals = ValidInputs().blocks(id: currID)
+        let vals = validInputs.blocks(id: currID)
         label.text = vals.1[row]
         
         return label

@@ -10,7 +10,7 @@ import UIKit
 
 class TaskViewController: UIViewController {
     
-    var gamePrompt : String!
+    var gamePrompt : String = ""
     
     @IBOutlet weak var textView: UITextView!
     

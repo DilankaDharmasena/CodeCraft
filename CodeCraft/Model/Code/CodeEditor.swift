@@ -8,29 +8,7 @@
 
 import Foundation
 
-protocol CodeEditorDelegate {
-    func startEditing(id: BlockID, data: Code)
-    func setSelectedBlock(id: BlockID)
-}
-
-class CodeEditor : BlockDelegate {
-    
-    let delegate : CodeEditorDelegate
-    
-    init(delegate lDelegate : CodeEditorDelegate) {
-        delegate = lDelegate
-    }
-    
-    func blockToBeEdited(id: BlockID, data: Code) {
-        //print(id.internalType, id.parentType)
-        delegate.startEditing(id: id, data: data)
-    }
-    
-    func blockToBeSelected(id: BlockID) {
-        if(id.parentType == .operationBlock) {
-            delegate.setSelectedBlock(id: id)
-        }
-    }
+class CodeEditor {
     
     func unwrap(code: Code, block: BlockID) -> (Code, [Int], [Code]) {
         
