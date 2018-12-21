@@ -27,11 +27,7 @@ class GameViewController: CodingViewController {
     func configure(gameID id : Int, delegate lDelegate: GameViewDelegate) {
         gameID = id
         delegate = lDelegate
-    }
-    
-    // Overriden from superclass
-    
-    override func setup() {
+        
         let level : LevelMO = levelModelUtils.level(id: gameID)[0]
         gamePrompt = level.prompt!
         numVars = level.formattedInputs[0].count
@@ -39,7 +35,10 @@ class GameViewController: CodingViewController {
         codeModel = CodeModel(code: [], block: BlockID.start) // Load saved answer
         
         levelModelUtils.startedLevel(id: gameID)
+        
     }
+    
+    // Overridden from superclass
     
     override func exitButtonTap(_ sender: UIButton) {
         dismiss(animated: false, completion: {self.delegate.reloadScreen()})
@@ -54,26 +53,13 @@ class GameViewController: CodingViewController {
     
     override func runSubmitButtonTap(_ sender: UIButton) {
         
-        let tester = Test()
-        let universalStrings = UniversalStrings()
-        
         let res = tester.runTest(gameID: gameID, code: codeModel.currentCode)
         
         if(res == .yesAnswer) {
-            
             levelModelUtils.finishedLevel(id: gameID)
-            
-            let alert = UIAlertController(title: universalStrings.yesMessage, message: nil, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            alert.modalPresentationStyle = .overCurrentContext
-            self.present(alert, animated: true, completion: nil)
-            
+            launchAlert(title: universalStrings.yesMessage[0], message: universalStrings.yesMessage[1])
         } else {
-            
-            let alert = UIAlertController(title: universalStrings.noMessage, message: universalStrings.errorMessages[res], preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            alert.modalPresentationStyle = .overCurrentContext
-            self.present(alert, animated: true, completion: nil)
+            launchAlert(title: universalStrings.noMessage, message: universalStrings.errorMessages[res]!)
         }
         
     }

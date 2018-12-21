@@ -37,6 +37,9 @@
 		FA93B74221A4F74C0053167D /* LevelBubbleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93B74121A4F74C0053167D /* LevelBubbleCollectionViewCell.swift */; };
 		FA97FE0D21C9B51F008026CA /* UniversalStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97FE0C21C9B51F008026CA /* UniversalStrings.swift */; };
 		FA97FE1121CC3A52008026CA /* CodingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97FE1021CC3A52008026CA /* CodingViewController.swift */; };
+		FA97FE1421CC6E81008026CA /* WorkshopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97FE1321CC6E81008026CA /* WorkshopViewController.swift */; };
+		FA97FE1621CC8246008026CA /* InputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97FE1521CC8246008026CA /* InputViewController.swift */; };
+		FA97FE1821CCAA11008026CA /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA97FE1721CCAA11008026CA /* UIViewExtension.swift */; };
 		FACB979021BCA9E00022DA15 /* Block.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB978F21BCA9E00022DA15 /* Block.swift */; };
 		FACB979221BCAD110022DA15 /* CodeEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB979121BCAD110022DA15 /* CodeEditor.swift */; };
 		FACB979421BCC18D0022DA15 /* CodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB979321BCC18D0022DA15 /* CodeModel.swift */; };
@@ -102,6 +105,9 @@
 		FA93B74121A4F74C0053167D /* LevelBubbleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelBubbleCollectionViewCell.swift; sourceTree = "<group>"; };
 		FA97FE0C21C9B51F008026CA /* UniversalStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalStrings.swift; sourceTree = "<group>"; };
 		FA97FE1021CC3A52008026CA /* CodingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingViewController.swift; sourceTree = "<group>"; };
+		FA97FE1321CC6E81008026CA /* WorkshopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkshopViewController.swift; sourceTree = "<group>"; };
+		FA97FE1521CC8246008026CA /* InputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputViewController.swift; sourceTree = "<group>"; };
+		FA97FE1721CCAA11008026CA /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		FACB978F21BCA9E00022DA15 /* Block.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block.swift; sourceTree = "<group>"; };
 		FACB979121BCAD110022DA15 /* CodeEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeEditor.swift; sourceTree = "<group>"; };
 		FACB979321BCC18D0022DA15 /* CodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeModel.swift; sourceTree = "<group>"; };
@@ -324,6 +330,8 @@
 		FA97FE0F21CC36DC008026CA /* Workshop */ = {
 			isa = PBXGroup;
 			children = (
+				FA97FE1321CC6E81008026CA /* WorkshopViewController.swift */,
+				FA97FE1521CC8246008026CA /* InputViewController.swift */,
 			);
 			path = Workshop;
 			sourceTree = "<group>";
@@ -410,6 +418,7 @@
 				FAEAA4F821AF5B96002EDEBF /* CodeTranslator.swift */,
 				FA04D5B821BB97CE00EA4F35 /* BlockDimensions.swift */,
 				FACB978F21BCA9E00022DA15 /* Block.swift */,
+				FA97FE1721CCAA11008026CA /* UIViewExtension.swift */,
 			);
 			path = Blocks;
 			sourceTree = "<group>";
@@ -534,6 +543,7 @@
 				FA04D59121B9BF4000EA4F35 /* IfBlock.swift in Sources */,
 				FA93B74221A4F74C0053167D /* LevelBubbleCollectionViewCell.swift in Sources */,
 				FACB97A121BDE8800022DA15 /* TaskViewController.swift in Sources */,
+				FA97FE1821CCAA11008026CA /* UIViewExtension.swift in Sources */,
 				FA04D59B21BB567600EA4F35 /* VarBlock.swift in Sources */,
 				FAF2D6B921A7B86F006781DE /* DataManager.swift in Sources */,
 				FA04D59D21BB56A500EA4F35 /* NumBlock.swift in Sources */,
@@ -543,6 +553,7 @@
 				FAF2D6EC21AB14AA006781DE /* UniversalTypeDefinitions.swift in Sources */,
 				FA93B72321A4B9670053167D /* CodeCraft.xcdatamodeld in Sources */,
 				FA04D5B921BB97CE00EA4F35 /* BlockDimensions.swift in Sources */,
+				FA97FE1421CC6E81008026CA /* WorkshopViewController.swift in Sources */,
 				FACB979C21BD86920022DA15 /* BlockCreateViewController.swift in Sources */,
 				FAF2D67C21A77F6A006781DE /* LevelSelectionViewController.swift in Sources */,
 				FACB979421BCC18D0022DA15 /* CodeModel.swift in Sources */,
@@ -558,6 +569,7 @@
 				FAEAA4F521AF52B5002EDEBF /* Compiler.swift in Sources */,
 				FAEAA4F921AF5B96002EDEBF /* CodeTranslator.swift in Sources */,
 				FA04D58F21B9BF1C00EA4F35 /* SubmitBlock.swift in Sources */,
+				FA97FE1621CC8246008026CA /* InputViewController.swift in Sources */,
 				FA97FE1121CC3A52008026CA /* CodingViewController.swift in Sources */,
 				FAF2D6BB21A7BC40006781DE /* LevelModelUtils.swift in Sources */,
 				FACB979A21BD65C10022DA15 /* ValidInputs.swift in Sources */,

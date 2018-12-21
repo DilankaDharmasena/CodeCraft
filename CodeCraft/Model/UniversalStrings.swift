@@ -11,18 +11,25 @@ import Foundation
 class UniversalStrings {
     
     let compLabel : String = "Comparison"
-    
     let mathLabel : String = "Operation"
-    
     let varLabel : String = "Variable"
-    
     let numLabel : String = "Integer"
     
-    let yesMessage : String = "You Got It!"
-    
+    let yesMessage : [String] = ["You Got It!", "Try another one"]
     let noMessage : String = "So Close"
     
-    let invalidInputNumberMessage : [String] = ["Invalid Input", "Enter a valid number"]
+    let invalidInputMessage : String = "Invalid Input"
+    let invalidInputNumberMessage : String = "Enter a valid integer"
+    let invalidInputInputsMessage : String = "Enter valid integers separated by commas"
+    
+    let defaultErrorMessage : String = "Something Went Wrong"
+    
+    let successfulRunMessage : String = "Success!"
+    let outputMessageFormat : String = "Your code and inputs resulted in an output of: %d"
+    
+    let reminderTitle : String = "Reminder"
+    
+    let remindInputsMessage : String = "Don't forget to set your inputs if you're using them"
     
     let blockNames : [InternalType:String] =
     [
@@ -34,7 +41,7 @@ class UniversalStrings {
         .compBlock : "Comparison",
         .mathBlock : "Math Operation",
         .blankBlock : "Empty",
-        .numBlock : "Number",
+        .numBlock : "Integer",
         .varBlock : "Variable"
     ]
     

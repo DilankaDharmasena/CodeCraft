@@ -27,6 +27,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Block" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cpd-cf-4yE">
                             <rect key="frame" x="20" y="9" width="80" height="22.5"/>
                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ButtonPlus" translatesAutoresizingMaskIntoConstraints="NO" id="odO-Ov-ZBY">
@@ -46,6 +47,15 @@
                         <constraint firstAttribute="trailing" secondItem="odO-Ov-ZBY" secondAttribute="trailing" constant="20" id="fGk-bT-dfy"/>
                         <constraint firstItem="cpd-cf-4yE" firstAttribute="leading" secondItem="tJd-rH-9fl" secondAttribute="leading" constant="20" id="ySC-LR-WTp"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="TopLeftRound" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="TopRightRound" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="BottomLeftRound" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="BottomRightRound" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="CornerRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

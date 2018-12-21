@@ -43,19 +43,23 @@ class CompBlock: UIView, Block {
         
         self.addSubview(contentView)
         
+        let buffer = BlockDimensions().Buffer
         contentView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
-        contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
-        contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        contentView.topAnchor.constraint(equalTo: self.topAnchor, constant: buffer).isActive = true
+        contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -buffer).isActive = true
+        contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: buffer).isActive = true
         contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
         
-        let doubleTap = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap))
-        doubleTap.numberOfTapsRequired = 2
-        let singleTap = UITapGestureRecognizer(target: self, action: #selector(handleSingleTap))
-        singleTap.numberOfTapsRequired = 1
-        singleTap.require(toFail: doubleTap)
-        self.addGestureRecognizer(doubleTap)
-        self.addGestureRecognizer(singleTap)
+        for view in viewCollection {
+            let doubleTap = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap))
+            doubleTap.numberOfTapsRequired = 2
+            let singleTap = UITapGestureRecognizer(target: self, action: #selector(handleSingleTap))
+            singleTap.numberOfTapsRequired = 1
+            singleTap.require(toFail: doubleTap)
+            view.addGestureRecognizer(doubleTap)
+            view.addGestureRecognizer(singleTap)
+        }
+        
     }
     
     func insertFirstInput(inputView : UIView) {

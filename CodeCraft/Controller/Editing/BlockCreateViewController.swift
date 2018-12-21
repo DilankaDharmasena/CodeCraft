@@ -30,6 +30,11 @@ class BlockCreateViewController: UIViewController, BlockEditorDelegate, UIPicker
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        let index = picker.numberOfRows(inComponent: 0) / 2
+        picker.selectRow(index, inComponent: 0, animated: false)
+    }
+    
     // Local
     
     func configure(currID lCurrID: BlockID, numVariables: Int, delegate lDelegate : BlockCreatorDelegate) {

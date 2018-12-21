@@ -41,7 +41,10 @@ class LevelSelectionViewController: UIViewController, UICollectionViewDataSource
     // Misc
     
     @objc func openWorkshop() {
-        print("Weee")
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "Workshop_Scene") as! WorkshopViewController
+        viewController.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+        viewController.configure(inputs: [], code: [])
+        present(viewController, animated: false, completion: nil)
     }
     
     // Collection View

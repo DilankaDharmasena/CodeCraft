@@ -14,6 +14,9 @@ class CodingViewController : UIViewController, BlockDelegate, BlockEditorDelegat
     @IBOutlet weak var runSubmitButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     
+    let tester = Test()
+    let universalStrings = UniversalStrings()
+    
     var codeModel : CodeModel!
     var codeTranslator : CodeTranslator!
     var codeEditor : CodeEditor = CodeEditor()
@@ -24,8 +27,6 @@ class CodingViewController : UIViewController, BlockDelegate, BlockEditorDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setup()
         
         codeTranslator = CodeTranslator(editor: self)
         
@@ -38,12 +39,6 @@ class CodingViewController : UIViewController, BlockDelegate, BlockEditorDelegat
         
         reloadView()
         
-    }
-    
-    // Configuration
-    
-    func setup() {
-        fatalError()
     }
     
     // Actions
@@ -86,6 +81,13 @@ class CodingViewController : UIViewController, BlockDelegate, BlockEditorDelegat
     }
     
     // Helpers
+    
+    func launchAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        alert.modalPresentationStyle = .overCurrentContext
+        self.present(alert, animated: true, completion: nil)
+    }
     
     func launchCreate(id: BlockID) {
         let viewController = storyboard?.instantiateViewController(withIdentifier: "blockCreateScene") as! BlockCreateViewController

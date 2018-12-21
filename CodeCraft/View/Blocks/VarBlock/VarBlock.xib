@@ -47,6 +47,15 @@
                         <constraint firstItem="7gc-WC-Mtb" firstAttribute="centerY" secondItem="14g-vy-aLk" secondAttribute="centerY" id="lcR-F0-HN9"/>
                         <constraint firstAttribute="height" constant="40" id="uZt-8t-Dve"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="TopLeftRound" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="TopRightRound" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="BottomLeftRound" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="BottomRightRound" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="CornerRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

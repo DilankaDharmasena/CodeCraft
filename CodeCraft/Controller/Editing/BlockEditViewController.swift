@@ -58,6 +58,7 @@ class BlockEditViewController: UIViewController, UIPickerViewDataSource, UIPicke
         case .numBlock:
             picker.isHidden = true
             editLabel.text = universalStrings.numLabel
+            viewHeight.constant = 200.0
         default:
             // not possible
             break
@@ -81,7 +82,12 @@ class BlockEditViewController: UIViewController, UIPickerViewDataSource, UIPicke
                 if(variable.count == 1) {
                     index = validInputs.variables.index(of: variable)! + numVars
                 } else {
-                    index = Int(String(variable.last!))! - 1
+                    let inputIndex : Int = Int(variable.components(separatedBy: "_")[1])!
+                    if(inputIndex > numVars) {
+                        index = 0
+                    } else {
+                        index = inputIndex - 1
+                    }
                 }
                 picker.selectRow(index, inComponent: 0, animated: false)
             case .numBlock:
@@ -89,6 +95,16 @@ class BlockEditViewController: UIViewController, UIPickerViewDataSource, UIPicke
                 textField.text = String(num)
             default:
                 // not possible
+                break
+            }
+        } else {
+            switch blockID.internalType! {
+            case .compBlock, .mathBlock:
+                let index = picker.numberOfRows(inComponent: 0) / 2
+                picker.selectRow(index, inComponent: 0, animated: false)
+            case .varBlock:
+                picker.selectRow(numVars, inComponent: 0, animated: false)
+            default:
                 break
             }
         }
@@ -140,7 +156,7 @@ class BlockEditViewController: UIViewController, UIPickerViewDataSource, UIPicke
             }
             
             if(invalid) {
-                let alert = UIAlertController(title: universalStrings.invalidInputNumberMessage[0], message: universalStrings.invalidInputNumberMessage[1], preferredStyle: .alert)
+                let alert = UIAlertController(title: universalStrings.invalidInputMessage, message: universalStrings.invalidInputNumberMessage, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 alert.modalPresentationStyle = .overCurrentContext
                 self.present(alert, animated: true, completion: nil)

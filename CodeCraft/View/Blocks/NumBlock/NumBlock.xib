@@ -31,8 +31,8 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Num" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLH-0L-esE">
-                            <rect key="frame" x="20" y="9" width="37.5" height="22.5"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Int" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLH-0L-esE">
+                            <rect key="frame" x="20" y="9" width="19" height="22.5"/>
                             <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
@@ -47,6 +47,15 @@
                         <constraint firstItem="GLH-0L-esE" firstAttribute="centerY" secondItem="I0F-lM-zRS" secondAttribute="centerY" id="jH9-Ko-iVg"/>
                         <constraint firstAttribute="height" constant="40" id="wHz-qo-RUl"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="TopLeftRound" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="TopRightRound" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="BottomLeftRound" value="YES"/>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="BottomRightRound" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="CornerRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
