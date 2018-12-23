@@ -12,15 +12,13 @@ protocol BlockEditorDelegate {
     func doneEditing(id: BlockID, data: Code, action: EditAction)
 }
 
-class BlockEditViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class BlockEditViewController: TypingViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var editLabel: UILabel!
     @IBOutlet weak var picker: UIPickerView!
-    @IBOutlet weak var textField: UITextField!
-    
     @IBOutlet weak var viewHeight: NSLayoutConstraint!
     
     var blockID : BlockID!
@@ -34,6 +32,8 @@ class BlockEditViewController: UIViewController, UIPickerViewDataSource, UIPicke
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        registerNotifications()
         
         picker.dataSource = self
         picker.delegate = self

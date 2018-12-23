@@ -12,9 +12,7 @@ protocol InputViewDelegate {
     func inputsUpdated(newInputs: [Int])
 }
 
-class InputViewController: UIViewController {
-    
-    @IBOutlet weak var inputTextField: UITextField!
+class InputViewController: TypingViewController {
     
     let universalStrings = UniversalStrings()
     
@@ -24,13 +22,15 @@ class InputViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        registerNotifications()
+        
         if(!inputs.isEmpty) {
             var displayString = ""
             for input in inputs {
                 displayString = displayString + String(input) + ","
             }
             displayString = String(displayString.dropLast())
-            inputTextField.text = displayString
+            textField.text = displayString
         }
         
     }
@@ -49,7 +49,7 @@ class InputViewController: UIViewController {
         var invalid = false
         var returnIntArray : [Int] = []
         
-        var inputString = inputTextField.text!
+        var inputString = textField.text!
         inputString = inputString.replacingOccurrences(of: " ", with: "")
         
         if(!inputString.isEmpty) {

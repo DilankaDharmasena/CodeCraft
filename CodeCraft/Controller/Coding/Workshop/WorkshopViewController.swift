@@ -18,7 +18,20 @@ class WorkshopViewController: CodingViewController, InputViewDelegate {
     var delegate : WorkshopDelegate!
     
     override func viewDidAppear(_ animated: Bool) {
-        launchAlertDialog(title: universalStrings.reminderTitle, message: universalStrings.remindInputsMessage)
+        
+        let currentTime = NSDate().timeIntervalSince1970
+        
+        let lastTime : TimeInterval? = UserDefaults.standard.object(forKey: "reminderOpened") as? TimeInterval
+        
+        if let lastTimeUnwrapped = lastTime {
+            if(lastTimeUnwrapped + 600.0 < currentTime) {
+                launchAlertDialog(title: universalStrings.reminderTitle, message: universalStrings.remindInputsMessage)
+            }
+        } else {
+            launchAlertDialog(title: universalStrings.reminderTitle, message: universalStrings.remindInputsMessage)
+        }
+        
+        UserDefaults.standard.set(currentTime, forKey: "reminderOpened")
     }
     
     func configure(inputs lInputs : [Int], code: Code, delegate lDelegate: WorkshopDelegate) {

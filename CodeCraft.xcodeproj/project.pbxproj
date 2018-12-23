@@ -60,6 +60,7 @@
 		FAF2D6BE21A8EAA3006781DE /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2D6BD21A8EAA3006781DE /* GameViewController.swift */; };
 		FAF2D6EC21AB14AA006781DE /* UniversalTypeDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2D6EB21AB14AA006781DE /* UniversalTypeDefinitions.swift */; };
 		FAF2D6EE21AB23D8006781DE /* LevelMOExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2D6ED21AB23D8006781DE /* LevelMOExtension.swift */; };
+		FAF6EE9721D0058E00364A76 /* TypingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF6EE9621D0058E00364A76 /* TypingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +131,7 @@
 		FAF2D6BD21A8EAA3006781DE /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		FAF2D6EB21AB14AA006781DE /* UniversalTypeDefinitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalTypeDefinitions.swift; sourceTree = "<group>"; };
 		FAF2D6ED21AB23D8006781DE /* LevelMOExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelMOExtension.swift; sourceTree = "<group>"; };
+		FAF6EE9621D0058E00364A76 /* TypingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,7 +246,6 @@
 			isa = PBXGroup;
 			children = (
 				FA708F7C21CF41C200D4CFC3 /* CustomAlertViewController.swift */,
-				FA708F7E21CF49A200D4CFC3 /* UIViewControllerExtension.swift */,
 			);
 			path = Alerts;
 			sourceTree = "<group>";
@@ -320,6 +321,8 @@
 				FA97FE0E21CC36A3008026CA /* Editing */,
 				FAF2D6BC21A8E9FE006781DE /* Coding */,
 				FAF2D67F21A78539006781DE /* LevelSelection */,
+				FA708F7E21CF49A200D4CFC3 /* UIViewControllerExtension.swift */,
+				FAF6EE9621D0058E00364A76 /* TypingViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -572,6 +575,7 @@
 				FACB979C21BD86920022DA15 /* BlockCreateViewController.swift in Sources */,
 				FAF2D67C21A77F6A006781DE /* LevelSelectionViewController.swift in Sources */,
 				FACB979421BCC18D0022DA15 /* CodeModel.swift in Sources */,
+				FAF6EE9721D0058E00364A76 /* TypingViewController.swift in Sources */,
 				FACB979221BCAD110022DA15 /* CodeEditor.swift in Sources */,
 				FA708F7D21CF41C200D4CFC3 /* CustomAlertViewController.swift in Sources */,
 				FA93B71B21A4B9670053167D /* AppDelegate.swift in Sources */,
