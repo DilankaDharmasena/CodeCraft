@@ -54,7 +54,7 @@ class Test {
     
     func runTest(gameID : Int, code: Code) -> ErrorCode {
         
-        let level = LevelModelUtils().level(id: gameID)[0]
+        let level = LevelModelUtils().level(id: gameID)
         let levelInputs = level.formattedInputs
         let levelOutputs = level.formattedOutputs
         

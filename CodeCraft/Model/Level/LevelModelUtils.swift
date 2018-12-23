@@ -35,7 +35,7 @@ class LevelModelUtils {
         return levelsMO
     }
     
-    func level(id : Int) -> [LevelMO] {
+    func level(id : Int) -> LevelMO {
         
         var levelMO : [LevelMO]
         
@@ -52,7 +52,7 @@ class LevelModelUtils {
             levelMO = []
         }
         
-        return levelMO
+        return levelMO[0]
         
     }
     
@@ -71,6 +71,10 @@ class LevelModelUtils {
             newLevel.prompt = level.prompt
             newLevel.inputs = level.inputs
             newLevel.outputs = level.outputs
+            
+            let initCode : Code = []
+            
+            newLevel.solution = initCode as NSObject
             
         }
         
@@ -107,7 +111,7 @@ class LevelModelUtils {
     // Modifications
     
     func startedLevel(id: Int) {
-        let level : LevelMO = self.level(id: id)[0]
+        let level : LevelMO = self.level(id: id)
         if(level.status < 1) {
             level.status = Int32(1)
             dataManager.saveContext()
@@ -115,7 +119,7 @@ class LevelModelUtils {
     }
     
     func finishedLevel(id: Int) {
-        let level : LevelMO = self.level(id: id)[0]
+        let level : LevelMO = self.level(id: id)
         if(level.status < 2) {
             level.status = Int32(2)
             dataManager.saveContext()
@@ -123,8 +127,8 @@ class LevelModelUtils {
     }
     
     func updatedSolution(id: Int, solution: Code) {
-        let level : LevelMO = self.level(id: id)[0]
-        level.solution = NSArray(array: solution)
+        let level : LevelMO = self.level(id: id)
+        level.solution = solution as NSObject
         dataManager.saveContext()
     }
     

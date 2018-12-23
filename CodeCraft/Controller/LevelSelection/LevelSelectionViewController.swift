@@ -22,6 +22,7 @@ class LevelSelectionViewController: UIViewController, UICollectionViewDataSource
     required init?(coder aDecoder: NSCoder) {
         
         LevelLoader().updateLevels() // Should be put in separate place that checks if recently updated
+        //LevelLoader().resetLevels()
         
         super.init(coder: aDecoder)
     }
@@ -60,7 +61,7 @@ class LevelSelectionViewController: UIViewController, UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let level = levelModelUtils.level(id: indexPath.row + 1)[0]
+        let level = levelModelUtils.level(id: indexPath.row + 1)
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! LevelBubbleCollectionViewCell
         cell.configure(levelNumber: Int(level.id), levelStatus: Int(level.status))

@@ -16,23 +16,39 @@ class GameViewController: CodingViewController {
     
     var gameID : Int = 0
     var gamePrompt : String = ""
+    var gameStatus : Int = 0
+    var sampleInput : [Int] = []
+    var sampleOutput : Int = 0
+    
     var delegate : GameViewDelegate!
     
     let levelModelUtils = LevelModelUtils()
     
-    override func viewDidAppear(_ animated: Bool) {
-        taskButtonTap()
+    var taskController : TaskViewController!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        taskController = storyboard?.instantiateViewController(withIdentifier: "taskScene") as? TaskViewController
+        taskController.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
+        taskController.configure(taskDescription: gamePrompt, input: sampleInput, output: sampleOutput)
+        
+        if(gameStatus == 0) {
+            taskButtonTap()
+        }
+        
     }
     
     func configure(gameID id : Int, delegate lDelegate: GameViewDelegate) {
         gameID = id
         delegate = lDelegate
         
-        let level : LevelMO = levelModelUtils.level(id: gameID)[0]
+        let level : LevelMO = levelModelUtils.level(id: gameID)
         gamePrompt = level.prompt!
-        numVars = level.formattedInputs[0].count
+        gameStatus = Int(level.status)
+        sampleInput = level.formattedInputs[0]
+        sampleOutput = level.formattedOutputs[0]
+        numVars = sampleInput.count
         
-        codeModel = CodeModel(code: [], block: BlockID.start) // Load saved answer
+        codeModel = CodeModel(code: level.solution as! Code, block: BlockID.start)
         
         levelModelUtils.startedLevel(id: gameID)
         
@@ -45,13 +61,12 @@ class GameViewController: CodingViewController {
     }
     
     override func taskButtonTap() {
-        let taskController = storyboard?.instantiateViewController(withIdentifier: "taskScene") as! TaskViewController
-        taskController.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
-        taskController.configure(taskDescription: gamePrompt)
         present(taskController, animated: true, completion: nil)
     }
     
     override func runSubmitButtonTap(_ sender: UIButton) {
+        
+        levelModelUtils.updatedSolution(id: gameID, solution: codeModel.currentCode)
         
         let res = tester.runTest(gameID: gameID, code: codeModel.currentCode)
         
