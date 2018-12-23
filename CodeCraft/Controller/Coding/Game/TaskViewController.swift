@@ -19,7 +19,7 @@ class TaskViewController: UIViewController {
     var exampleStatus = true
     
     let buttonLabel_1 : String = "Example"
-    let buttonLabel_2 : String = "Task"
+    let buttonLabel_2 : String = "Show Task"
     
     override func viewDidLoad() {
         textView.textContainerInset = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)

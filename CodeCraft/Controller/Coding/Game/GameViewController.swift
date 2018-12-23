@@ -15,6 +15,8 @@ protocol GameViewDelegate {
 
 class GameViewController: CodingViewController {
     
+    @IBOutlet weak var levelLabel: UILabel!
+    
     var gameID : Int = 0
     var gamePrompt : String = ""
     var gameStatus : Int = 0
@@ -28,6 +30,12 @@ class GameViewController: CodingViewController {
     var taskController : TaskViewController!
     
     override func viewWillAppear(_ animated: Bool) {
+        
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .spellOut
+        
+        levelLabel.text = numberFormatter.string(from: NSNumber(value: gameID))
+        
         taskController = storyboard?.instantiateViewController(withIdentifier: "taskScene") as? TaskViewController
         taskController.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
         taskController.configure(taskDescription: gamePrompt, input: sampleInput, output: sampleOutput)
