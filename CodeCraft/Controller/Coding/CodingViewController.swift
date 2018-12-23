@@ -37,6 +37,9 @@ class CodingViewController : UIViewController, BlockDelegate, BlockEditorDelegat
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
         leftButton.addGestureRecognizer(longPress)
         
+        let longRunPress = UILongPressGestureRecognizer(target: self, action: #selector(handleLongRunPress))
+        runSubmitButton.addGestureRecognizer(longRunPress)
+        
         reloadView()
         
     }
@@ -78,6 +81,10 @@ class CodingViewController : UIViewController, BlockDelegate, BlockEditorDelegat
     @objc func handleLongPress() {
         codeModel.clear()
         reloadView()
+    }
+    
+    @objc func handleLongRunPress() {
+        fatalError()
     }
     
     // Helpers

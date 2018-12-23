@@ -10,6 +10,7 @@ import UIKit
 
 protocol GameViewDelegate {
     func reloadScreen()
+    func transferToWorkshop(code: Code, input: [Int])
 }
 
 class GameViewController: CodingViewController {
@@ -37,7 +38,7 @@ class GameViewController: CodingViewController {
         
     }
     
-    func configure(gameID id : Int, delegate lDelegate: GameViewDelegate) {
+    func configure(gameID id : Int, code: Code, delegate lDelegate: GameViewDelegate) {
         gameID = id
         delegate = lDelegate
         
@@ -48,13 +49,22 @@ class GameViewController: CodingViewController {
         sampleOutput = level.formattedOutputs[0]
         numVars = sampleInput.count
         
-        codeModel = CodeModel(code: level.solution as! Code, block: BlockID.start)
+        let starterCode : Code = code.isEmpty ? level.solution as! Code : code
+        
+        codeModel = CodeModel(code: starterCode, block: BlockID.start)
         
         levelModelUtils.startedLevel(id: gameID)
         
     }
     
     // Overridden from superclass
+    
+    override func handleLongRunPress() {
+        dismiss(animated: false, completion: {
+            self.delegate.reloadScreen()
+            self.delegate.transferToWorkshop(code: self.codeModel.currentCode, input: self.sampleInput)
+        })
+    }
     
     override func exitButtonTap(_ sender: UIButton) {
         dismiss(animated: false, completion: {self.delegate.reloadScreen()})

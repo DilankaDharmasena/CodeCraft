@@ -8,23 +8,35 @@
 
 import UIKit
 
+protocol WorkshopDelegate {
+    func transferToLevel(code: Code)
+}
+
 class WorkshopViewController: CodingViewController, InputViewDelegate {
     
     var inputs : [Int] = []
+    var delegate : WorkshopDelegate!
     
     override func viewDidAppear(_ animated: Bool) {
         launchAlert(title: universalStrings.reminderTitle, message: universalStrings.remindInputsMessage)
     }
     
-    func configure(inputs lInputs : [Int], code: Code) {
-        inputs = lInputs
+    func configure(inputs lInputs : [Int], code: Code, delegate lDelegate: WorkshopDelegate) {
+        delegate = lDelegate
         
+        inputs = lInputs
         numVars = inputs.count
         
         codeModel = CodeModel(code: code, block: BlockID.start)
     }
     
     // Overridden from superclass
+    
+    override func handleLongRunPress() {
+        dismiss(animated: false, completion: {
+            self.delegate.transferToLevel(code: self.codeModel.currentCode)
+        })
+    }
     
     override func exitButtonTap(_ sender: UIButton) {
         dismiss(animated: false, completion: nil)

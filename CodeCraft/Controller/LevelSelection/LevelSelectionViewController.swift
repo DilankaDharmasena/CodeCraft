@@ -8,20 +8,22 @@
 
 import UIKit
 
-class LevelSelectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, GameViewDelegate {
-    
+class LevelSelectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, GameViewDelegate, WorkshopDelegate {
     
     @IBOutlet weak var levelSelectionCollectionView: UICollectionView!
-    
     @IBOutlet weak var workshopButton: UIImageView!
     
     let levelModelUtils = LevelModelUtils()
     
     let reuseIdentifier = "Level_Bubble"
     
+    var transferTracker : Code?
+    
+    // Lifecycle
+    
     required init?(coder aDecoder: NSCoder) {
         
-        LevelLoader().updateLevels() // Should be put in separate place that checks if recently updated
+        LevelLoader().updateLevels()
         //LevelLoader().resetLevels()
         
         super.init(coder: aDecoder)
@@ -33,7 +35,7 @@ class LevelSelectionViewController: UIViewController, UICollectionViewDataSource
         levelSelectionCollectionView.dataSource = self
         levelSelectionCollectionView.delegate = self
         
-        let tapWorkshop = UITapGestureRecognizer(target: self, action: #selector(openWorkshop))
+        let tapWorkshop = UITapGestureRecognizer(target: self, action: #selector(handleWorkshopTap))
         tapWorkshop.numberOfTapsRequired = 1
         workshopButton.addGestureRecognizer(tapWorkshop)
         
@@ -41,10 +43,47 @@ class LevelSelectionViewController: UIViewController, UICollectionViewDataSource
     
     // Misc
     
-    @objc func openWorkshop() {
+    func transferMode(code: Code) {
+        transferTracker = code
+        
+        // UI Changes
+        workshopButton.isHighlighted = true
+    }
+    
+    func normalMode(gameID : Int? = nil) {
+        let localTransfer = transferTracker!
+        transferTracker = nil
+        
+        if let id = gameID {
+            openLevel(gameID: id, code: localTransfer)
+        }
+        
+        // UI Changes
+        workshopButton.isHighlighted = false
+        
+    }
+    
+    @objc func handleWorkshopTap() {
+        if(transferTracker == nil) {
+            openWorkshop()
+        } else {
+            normalMode()
+        }
+    }
+    
+    // Launchers
+    
+    func openWorkshop(inputs: [Int] = [], code : Code = []) {
         let viewController = storyboard?.instantiateViewController(withIdentifier: "Workshop_Scene") as! WorkshopViewController
         viewController.modalPresentationStyle = UIModalPresentationStyle.fullScreen
-        viewController.configure(inputs: [], code: [])
+        viewController.configure(inputs: inputs, code: code, delegate: self)
+        present(viewController, animated: false, completion: nil)
+    }
+    
+    func openLevel(gameID: Int, code: Code = []) {
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "Game_Scene") as! GameViewController
+        viewController.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+        viewController.configure(gameID: gameID, code: code, delegate: self)
         present(viewController, animated: false, completion: nil)
     }
     
@@ -72,23 +111,33 @@ class LevelSelectionViewController: UIViewController, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! LevelBubbleCollectionViewCell
         
-        let viewController = storyboard?.instantiateViewController(withIdentifier: "Game_Scene") as! GameViewController
-        viewController.modalPresentationStyle = UIModalPresentationStyle.fullScreen
-        viewController.configure(gameID: cell.levelID, delegate: self)
-        present(viewController, animated: false, completion: nil)
-        
+        if(transferTracker == nil) {
+            openLevel(gameID: cell.levelID)
+        } else {
+            normalMode(gameID: cell.levelID)
+        }
     }
     
-    // Game Delegate
+    // Game View Delegate
     
     func reloadScreen() {
         levelSelectionCollectionView.reloadData()
     }
     
+    func transferToWorkshop(code: Code, input: [Int]) {
+        openWorkshop(inputs: input, code: code)
+    }
+    
+    // Workshop Delegate
+    
+    func transferToLevel(code: Code) {
+        transferMode(code: code)
+    }
+    
     // Status Bar
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        return .default
     }
     
 }

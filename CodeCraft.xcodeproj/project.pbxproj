@@ -28,10 +28,10 @@
 		FA04D5B921BB97CE00EA4F35 /* BlockDimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA04D5B821BB97CE00EA4F35 /* BlockDimensions.swift */; };
 		FA04D5BE21BC3F6C00EA4F35 /* BlankBlock.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA04D5BD21BC3F6C00EA4F35 /* BlankBlock.xib */; };
 		FA04D5C021BC3F8500EA4F35 /* BlankBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA04D5BF21BC3F8500EA4F35 /* BlankBlock.swift */; };
+		FA708F7A21CF37C900D4CFC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA708F7921CF37C800D4CFC3 /* Assets.xcassets */; };
 		FA93B71B21A4B9670053167D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93B71A21A4B9670053167D /* AppDelegate.swift */; };
 		FA93B72021A4B9670053167D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA93B71E21A4B9670053167D /* Main.storyboard */; };
 		FA93B72321A4B9670053167D /* CodeCraft.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA93B72121A4B9670053167D /* CodeCraft.xcdatamodeld */; };
-		FA93B72521A4B9680053167D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA93B72421A4B9680053167D /* Assets.xcassets */; };
 		FA93B72821A4B9680053167D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA93B72621A4B9680053167D /* LaunchScreen.storyboard */; };
 		FA93B73321A4B9680053167D /* CodeCraftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93B73221A4B9680053167D /* CodeCraftTests.swift */; };
 		FA93B74221A4F74C0053167D /* LevelBubbleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93B74121A4F74C0053167D /* LevelBubbleCollectionViewCell.swift */; };
@@ -92,11 +92,11 @@
 		FA04D5B821BB97CE00EA4F35 /* BlockDimensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockDimensions.swift; sourceTree = "<group>"; };
 		FA04D5BD21BC3F6C00EA4F35 /* BlankBlock.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlankBlock.xib; sourceTree = "<group>"; };
 		FA04D5BF21BC3F8500EA4F35 /* BlankBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankBlock.swift; sourceTree = "<group>"; };
+		FA708F7921CF37C800D4CFC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA93B71721A4B9670053167D /* CodeCraft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeCraft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA93B71A21A4B9670053167D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA93B71F21A4B9670053167D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA93B72221A4B9670053167D /* CodeCraft.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CodeCraft.xcdatamodel; sourceTree = "<group>"; };
-		FA93B72421A4B9680053167D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA93B72721A4B9680053167D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA93B72921A4B9680053167D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA93B72E21A4B9680053167D /* CodeCraftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodeCraftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -312,7 +312,7 @@
 		FA93B74021A4F06F0053167D /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				FA93B72421A4B9680053167D /* Assets.xcassets */,
+				FA708F7921CF37C800D4CFC3 /* Assets.xcassets */,
 				FAF2D68521A7A2B2006781DE /* levels.plist */,
 			);
 			path = Assets;
@@ -510,11 +510,11 @@
 				FA04D59F21BB56C700EA4F35 /* VarBlock.xib in Resources */,
 				FA04D5BE21BC3F6C00EA4F35 /* BlankBlock.xib in Resources */,
 				FA04D5AF21BB755300EA4F35 /* NumBlock.xib in Resources */,
+				FA708F7A21CF37C900D4CFC3 /* Assets.xcassets in Resources */,
 				FA04D59921B9CA2300EA4F35 /* SetBlock.xib in Resources */,
 				FA04D5B321BB7D2A00EA4F35 /* IfBlock.xib in Resources */,
 				FAF2D68621A7A2B2006781DE /* levels.plist in Resources */,
 				FA04D5B721BB938400EA4F35 /* WhileBlock.xib in Resources */,
-				FA93B72521A4B9680053167D /* Assets.xcassets in Resources */,
 				FA04D5B121BB78A100EA4F35 /* SubmitBlock.xib in Resources */,
 				FA04D5AD21BB722700EA4F35 /* CompBlock.xib in Resources */,
 				FA93B72021A4B9670053167D /* Main.storyboard in Resources */,
