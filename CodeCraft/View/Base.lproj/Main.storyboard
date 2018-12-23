@@ -126,9 +126,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CodeCraft" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0se-yw-0R2">
+                                <rect key="frame" x="140" y="493" width="95" height="26"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="UOM-1L-EEh">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="20" id="7QF-EU-iPJ">
                                     <size key="itemSize" width="90" height="90"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -182,8 +189,10 @@
                         <constraints>
                             <constraint firstItem="UOM-1L-EEh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7Lg-ub-Rn2"/>
                             <constraint firstAttribute="bottom" secondItem="UOM-1L-EEh" secondAttribute="bottom" id="Ddz-cY-Ne7"/>
+                            <constraint firstItem="0se-yw-0R2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FvH-Rg-opa"/>
                             <constraint firstItem="UOM-1L-EEh" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="L4H-YA-L8O"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5Gx-I5-4yH" secondAttribute="bottom" constant="15" id="Slg-44-0iK"/>
+                            <constraint firstAttribute="bottom" secondItem="0se-yw-0R2" secondAttribute="bottom" constant="148" id="eiT-Yf-hNt"/>
                             <constraint firstItem="UOM-1L-EEh" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="kK8-09-hcp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5Gx-I5-4yH" secondAttribute="trailing" constant="20" id="kh6-Se-oIU"/>
                         </constraints>
