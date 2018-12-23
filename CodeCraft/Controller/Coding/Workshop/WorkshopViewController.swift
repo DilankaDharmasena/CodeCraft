@@ -18,7 +18,7 @@ class WorkshopViewController: CodingViewController, InputViewDelegate {
     var delegate : WorkshopDelegate!
     
     override func viewDidAppear(_ animated: Bool) {
-        launchAlert(title: universalStrings.reminderTitle, message: universalStrings.remindInputsMessage)
+        launchAlertDialog(title: universalStrings.reminderTitle, message: universalStrings.remindInputsMessage)
     }
     
     func configure(inputs lInputs : [Int], code: Code, delegate lDelegate: WorkshopDelegate) {
@@ -54,9 +54,9 @@ class WorkshopViewController: CodingViewController, InputViewDelegate {
         let res = tester.runSim(input: inputs, code: codeModel.currentCode)
         
         if(res.error == .yesAnswer) {
-            launchAlert(title: universalStrings.successfulRunMessage, message: String(format: universalStrings.outputMessageFormat, res.result))
+            launchAlertDialog(title: universalStrings.successfulRunMessage, message: String(format: universalStrings.outputMessageFormat, res.result))
         } else {
-            launchAlert(title: universalStrings.defaultErrorMessage, message: universalStrings.errorMessages[res.error]!)
+            launchAlertDialog(title: universalStrings.defaultErrorMessage, message: universalStrings.errorMessages[res.error]!)
         }
         
     }

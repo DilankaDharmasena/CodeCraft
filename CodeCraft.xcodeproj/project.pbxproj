@@ -29,6 +29,8 @@
 		FA04D5BE21BC3F6C00EA4F35 /* BlankBlock.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA04D5BD21BC3F6C00EA4F35 /* BlankBlock.xib */; };
 		FA04D5C021BC3F8500EA4F35 /* BlankBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA04D5BF21BC3F8500EA4F35 /* BlankBlock.swift */; };
 		FA708F7A21CF37C900D4CFC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA708F7921CF37C800D4CFC3 /* Assets.xcassets */; };
+		FA708F7D21CF41C200D4CFC3 /* CustomAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA708F7C21CF41C200D4CFC3 /* CustomAlertViewController.swift */; };
+		FA708F7F21CF49A200D4CFC3 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA708F7E21CF49A200D4CFC3 /* UIViewControllerExtension.swift */; };
 		FA93B71B21A4B9670053167D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA93B71A21A4B9670053167D /* AppDelegate.swift */; };
 		FA93B72021A4B9670053167D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA93B71E21A4B9670053167D /* Main.storyboard */; };
 		FA93B72321A4B9670053167D /* CodeCraft.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA93B72121A4B9670053167D /* CodeCraft.xcdatamodeld */; };
@@ -93,6 +95,8 @@
 		FA04D5BD21BC3F6C00EA4F35 /* BlankBlock.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BlankBlock.xib; sourceTree = "<group>"; };
 		FA04D5BF21BC3F8500EA4F35 /* BlankBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankBlock.swift; sourceTree = "<group>"; };
 		FA708F7921CF37C800D4CFC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA708F7C21CF41C200D4CFC3 /* CustomAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertViewController.swift; sourceTree = "<group>"; };
+		FA708F7E21CF49A200D4CFC3 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		FA93B71721A4B9670053167D /* CodeCraft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeCraft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA93B71A21A4B9670053167D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA93B71F21A4B9670053167D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -236,6 +240,15 @@
 			path = BlankBlock;
 			sourceTree = "<group>";
 		};
+		FA708F7B21CF417200D4CFC3 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				FA708F7C21CF41C200D4CFC3 /* CustomAlertViewController.swift */,
+				FA708F7E21CF49A200D4CFC3 /* UIViewControllerExtension.swift */,
+			);
+			path = Alerts;
+			sourceTree = "<group>";
+		};
 		FA93B70E21A4B9670053167D = {
 			isa = PBXGroup;
 			children = (
@@ -293,6 +306,7 @@
 			children = (
 				FAF2D6C321A91211006781DE /* Blocks */,
 				FAF2D68021A785A8006781DE /* LevelSelection */,
+				FA97FE1721CCAA11008026CA /* UIViewExtension.swift */,
 				FA93B72621A4B9680053167D /* LaunchScreen.storyboard */,
 				FA93B71E21A4B9670053167D /* Main.storyboard */,
 			);
@@ -302,6 +316,7 @@
 		FA93B73F21A4F05C0053167D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FA708F7B21CF417200D4CFC3 /* Alerts */,
 				FA97FE0E21CC36A3008026CA /* Editing */,
 				FAF2D6BC21A8E9FE006781DE /* Coding */,
 				FAF2D67F21A78539006781DE /* LevelSelection */,
@@ -418,7 +433,6 @@
 				FAEAA4F821AF5B96002EDEBF /* CodeTranslator.swift */,
 				FA04D5B821BB97CE00EA4F35 /* BlockDimensions.swift */,
 				FACB978F21BCA9E00022DA15 /* Block.swift */,
-				FA97FE1721CCAA11008026CA /* UIViewExtension.swift */,
 			);
 			path = Blocks;
 			sourceTree = "<group>";
@@ -553,11 +567,13 @@
 				FAF2D6EC21AB14AA006781DE /* UniversalTypeDefinitions.swift in Sources */,
 				FA93B72321A4B9670053167D /* CodeCraft.xcdatamodeld in Sources */,
 				FA04D5B921BB97CE00EA4F35 /* BlockDimensions.swift in Sources */,
+				FA708F7F21CF49A200D4CFC3 /* UIViewControllerExtension.swift in Sources */,
 				FA97FE1421CC6E81008026CA /* WorkshopViewController.swift in Sources */,
 				FACB979C21BD86920022DA15 /* BlockCreateViewController.swift in Sources */,
 				FAF2D67C21A77F6A006781DE /* LevelSelectionViewController.swift in Sources */,
 				FACB979421BCC18D0022DA15 /* CodeModel.swift in Sources */,
 				FACB979221BCAD110022DA15 /* CodeEditor.swift in Sources */,
+				FA708F7D21CF41C200D4CFC3 /* CustomAlertViewController.swift in Sources */,
 				FA93B71B21A4B9670053167D /* AppDelegate.swift in Sources */,
 				FA97FE0D21C9B51F008026CA /* UniversalStrings.swift in Sources */,
 				FACB979021BCA9E00022DA15 /* Block.swift in Sources */,

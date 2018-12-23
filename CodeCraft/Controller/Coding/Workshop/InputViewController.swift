@@ -66,10 +66,7 @@ class InputViewController: UIViewController {
         }
         
         if(invalid) {
-            let alert = UIAlertController(title: universalStrings.invalidInputMessage, message: universalStrings.invalidInputInputsMessage, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            alert.modalPresentationStyle = .overCurrentContext
-            self.present(alert, animated: true, completion: nil)
+            launchAlertDialog(title: universalStrings.invalidInputMessage, message: universalStrings.invalidInputInputsMessage)
         } else {
             dismiss(animated: false, completion: {self.delegate.inputsUpdated(newInputs: returnIntArray)})
         }

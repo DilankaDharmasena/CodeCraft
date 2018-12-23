@@ -89,13 +89,6 @@ class CodingViewController : UIViewController, BlockDelegate, BlockEditorDelegat
     
     // Helpers
     
-    func launchAlert(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        alert.modalPresentationStyle = .overCurrentContext
-        self.present(alert, animated: true, completion: nil)
-    }
-    
     func launchCreate(id: BlockID) {
         let viewController = storyboard?.instantiateViewController(withIdentifier: "blockCreateScene") as! BlockCreateViewController
         viewController.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext

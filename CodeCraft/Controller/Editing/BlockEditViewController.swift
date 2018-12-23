@@ -40,7 +40,6 @@ class BlockEditViewController: UIViewController, UIPickerViewDataSource, UIPicke
         
         switch blockID.internalType! {
         case .whileBlock, .forBlock, .ifBlock, .submitBlock, .setBlock:
-            saveButton.isHidden = true
             editLabel.isHidden = true
             picker.isHidden = true
             textField.isHidden = true
@@ -156,15 +155,11 @@ class BlockEditViewController: UIViewController, UIPickerViewDataSource, UIPicke
             }
             
             if(invalid) {
-                let alert = UIAlertController(title: universalStrings.invalidInputMessage, message: universalStrings.invalidInputNumberMessage, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                alert.modalPresentationStyle = .overCurrentContext
-                self.present(alert, animated: true, completion: nil)
+                launchAlertDialog(title: universalStrings.invalidInputMessage, message: universalStrings.invalidInputNumberMessage)
             }
             
         default:
-            // not possible
-            break
+            dismiss(animated: false, completion: nil)
         }
         
     }
@@ -196,7 +191,7 @@ class BlockEditViewController: UIViewController, UIPickerViewDataSource, UIPicke
         let label = (view as? UILabel) ?? UILabel()
         label.textColor = .black
         label.textAlignment = .center
-        label.font = UIFont(name: "Futura", size: 17)
+        label.font = UIFont(name: "Futura", size: 16)
         
         switch blockID.internalType! {
         case .compBlock:

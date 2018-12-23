@@ -82,9 +82,9 @@ class GameViewController: CodingViewController {
         
         if(res == .yesAnswer) {
             levelModelUtils.finishedLevel(id: gameID)
-            launchAlert(title: universalStrings.yesMessage[0], message: universalStrings.yesMessage[1])
+            launchAlertDialog(title: universalStrings.yesMessage[0], message: universalStrings.yesMessage[1])
         } else {
-            launchAlert(title: universalStrings.noMessage, message: universalStrings.errorMessages[res]!)
+            launchAlertDialog(title: universalStrings.noMessage, message: universalStrings.errorMessages[res]!)
         }
         
     }

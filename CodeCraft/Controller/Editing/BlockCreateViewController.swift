@@ -101,7 +101,7 @@ class BlockCreateViewController: UIViewController, BlockEditorDelegate, UIPicker
         let label = (view as? UILabel) ?? UILabel()
         label.textColor = .black
         label.textAlignment = .center
-        label.font = UIFont(name: "Futura", size: 17)
+        label.font = UIFont(name: "Futura", size: 16)
         
         let vals = validInputs.blocks(id: currID)
         label.text = vals.1[row]
