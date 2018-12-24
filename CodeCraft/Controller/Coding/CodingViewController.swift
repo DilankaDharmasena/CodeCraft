@@ -111,7 +111,9 @@ class CodingViewController : UIViewController, BlockDelegate, BlockEditorDelegat
             sub.removeFromSuperview()
         }
         
-        scrollView.contentSize = newView.frame.size
+        let contentSize = CGSize(width: newView.frame.size.width, height: newView.frame.size.height + BlockDimensions().Buffer)
+        
+        scrollView.contentSize = contentSize
         scrollView.addSubview(newView)
         
     }

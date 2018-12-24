@@ -67,7 +67,7 @@ class Block: UIView {
     
     func select() {
         for view in viewCollection {
-            view.backgroundColor = UIColor(red: 0.2, green: 0.3, blue: 0.3, alpha: 1.0)
+            view.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
         }
     }
     

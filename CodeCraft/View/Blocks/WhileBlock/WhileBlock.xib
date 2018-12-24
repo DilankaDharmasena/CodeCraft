@@ -43,7 +43,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="0.67346129441624369" green="0.48785761981959253" blue="0.50052762978333387" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.67450980390000004" green="0.54714890979999997" blue="0.46290877860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="amc-PT-vx4" firstAttribute="centerX" secondItem="QoI-yQ-fK8" secondAttribute="centerX" id="IbO-iA-35U"/>
                         <constraint firstAttribute="height" constant="40" id="gQS-x4-zlx"/>
@@ -70,7 +70,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="0.67346129440000002" green="0.48785761979999998" blue="0.50052762979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.67450980390000004" green="0.54714890979999997" blue="0.46290877860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="80" id="5hX-AX-mlW"/>
                         <constraint firstItem="Ogn-db-15R" firstAttribute="centerY" secondItem="Mj2-xQ-6ik" secondAttribute="centerY" id="Aed-1I-jUn"/>
@@ -89,14 +89,14 @@
                 </view>
                 <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="odd-za-khU" userLabel="Expand1">
                     <rect key="frame" x="0.0" y="40" width="30" height="120"/>
-                    <color key="backgroundColor" red="0.67450980392156867" green="0.48627450980392156" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.67450980392156867" green="0.5471489098414426" blue="0.46290877859238722" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="30" id="Rav-gR-22D"/>
                     </constraints>
                 </view>
                 <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="peS-qb-6nd" userLabel="Expand2">
                     <rect key="frame" x="0.0" y="200" width="30" height="120"/>
-                    <color key="backgroundColor" red="0.67346129440000002" green="0.48785761979999998" blue="0.50052762979999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.67450980390000004" green="0.54714890979999997" blue="0.46290877860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="30" id="VRT-kp-47w"/>
                     </constraints>
@@ -112,7 +112,7 @@
                 </view>
                 <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gwj-f2-v2i">
                     <rect key="frame" x="30" y="40" width="5" height="5"/>
-                    <color key="backgroundColor" red="0.67450980392156867" green="0.48627450980392156" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.67450980390000004" green="0.54714890979999997" blue="0.46290877860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="5" id="dnO-HY-08d"/>
                         <constraint firstAttribute="width" constant="5" id="wud-Ia-XHd"/>
@@ -120,7 +120,7 @@
                 </view>
                 <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gzy-4H-IpB">
                     <rect key="frame" x="30" y="200" width="5" height="5"/>
-                    <color key="backgroundColor" red="0.67450980392156867" green="0.48627450980392156" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.67450980390000004" green="0.54714890979999997" blue="0.46290877860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="5" id="JjJ-8w-pgp"/>
                         <constraint firstAttribute="width" constant="5" id="Jy1-xK-ehV"/>
@@ -128,7 +128,7 @@
                 </view>
                 <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aEp-Gt-mOW">
                     <rect key="frame" x="30" y="155" width="5" height="5"/>
-                    <color key="backgroundColor" red="0.67450980392156867" green="0.48627450980392156" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.67450980390000004" green="0.54714890979999997" blue="0.46290877860000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="5" id="OVP-MC-H5A"/>
                         <constraint firstAttribute="height" constant="5" id="Xan-vh-5Bt"/>
