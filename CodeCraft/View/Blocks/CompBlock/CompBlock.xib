@@ -12,11 +12,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CompBlock" customModule="CodeCraft" customModuleProvider="target">
             <connections>
-                <outlet property="compLabel" destination="Uep-8r-mg9" id="Gyd-VK-vjQ"/>
                 <outlet property="contentView" destination="ecl-Uy-Ex9" id="RTT-Y7-Bnx"/>
                 <outlet property="firstInputView" destination="EdA-wQ-srz" id="uDy-bK-Cun"/>
                 <outlet property="firstInputViewHeight" destination="qDK-Ie-yJY" id="tVE-Vn-jla"/>
                 <outlet property="firstInputViewWidth" destination="hqS-pu-Yge" id="uFH-iH-ddv"/>
+                <outlet property="operationLabel" destination="Uep-8r-mg9" id="OX8-Mg-1h8"/>
                 <outlet property="secondInputView" destination="lAV-jM-5n7" id="zPs-Ns-O7U"/>
                 <outlet property="secondInputViewHeight" destination="dOS-ci-ouk" id="nbe-IY-gCo"/>
                 <outlet property="secondInputViewWidth" destination="NSy-j3-EcJ" id="c7o-38-deT"/>

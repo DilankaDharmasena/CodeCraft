@@ -12,10 +12,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ForBlock" customModule="CodeCraft" customModuleProvider="target">
             <connections>
+                <outlet property="checkView" destination="mjv-Uo-EF8" id="V7s-4K-YHN"/>
+                <outlet property="checkViewHeight" destination="Jwq-K5-Chv" id="ad8-Za-1Re"/>
+                <outlet property="checkViewWidth" destination="g31-m9-qpy" id="bZg-2N-aUo"/>
                 <outlet property="contentView" destination="jCp-2f-nhE" id="IWL-xn-Ahu"/>
-                <outlet property="iterInputView" destination="mjv-Uo-EF8" id="CEo-A5-ZJI"/>
-                <outlet property="iterInputViewHeight" destination="Jwq-K5-Chv" id="uta-GK-9xK"/>
-                <outlet property="iterInputViewWidth" destination="g31-m9-qpy" id="jeQ-mJ-VOY"/>
                 <outlet property="operationsView" destination="wwo-gl-YkH" id="7Q5-3l-Bnh"/>
                 <outlet property="operationsViewHeight" destination="Rak-9L-9w8" id="gkc-rY-7pG"/>
                 <outlet property="operationsViewWidth" destination="ybB-oH-gp3" id="8lN-Gy-7VK"/>

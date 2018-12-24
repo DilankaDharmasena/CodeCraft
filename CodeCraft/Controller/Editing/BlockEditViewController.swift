@@ -33,7 +33,7 @@ class BlockEditViewController: TypingViewController, UIPickerViewDataSource, UIP
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        registerNotifications()
+        setup()
         
         picker.dataSource = self
         picker.delegate = self
@@ -118,9 +118,9 @@ class BlockEditViewController: TypingViewController, UIPickerViewDataSource, UIP
         
     }
 
-    @IBAction func cancelTapped(_ sender: UIButton) {
-        dismiss(animated: false, completion: nil)
-    }
+    //
+    // cancelTapped defined in TypingViewController
+    //
     
     @IBAction func saveTapped(_ sender: UIButton) {
         

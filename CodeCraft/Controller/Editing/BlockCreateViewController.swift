@@ -28,6 +28,10 @@ class BlockCreateViewController: UIViewController, BlockEditorDelegate, UIPicker
         picker.dataSource = self
         picker.delegate = self
         
+        let viewTap = UITapGestureRecognizer(target: self, action: #selector(cancelTapped))
+        viewTap.numberOfTapsRequired = 1
+        view.addGestureRecognizer(viewTap)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -45,7 +49,7 @@ class BlockCreateViewController: UIViewController, BlockEditorDelegate, UIPicker
     
     // Buttons
     
-    @IBAction func cancelTapped(_ sender: UIButton) {
+    @IBAction func cancelTapped() {
         dismiss(animated: false, completion: nil)
     }
     

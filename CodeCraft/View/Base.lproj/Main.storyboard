@@ -285,7 +285,7 @@
                                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="cancelTapped:" destination="Rha-jj-1RU" eventType="touchUpInside" id="2lU-1I-kHS"/>
+                                                    <action selector="cancelTapped" destination="Rha-jj-1RU" eventType="touchUpInside" id="8NX-lK-La5"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVQ-eO-Xkm">
@@ -744,7 +744,7 @@
                                             <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="cancelTapped:" destination="IUL-ek-cBO" eventType="touchUpInside" id="QtA-u4-f3Q"/>
+                                            <action selector="cancelTapped" destination="IUL-ek-cBO" eventType="touchUpInside" id="lZT-tV-aM3"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTV-NK-MIf">

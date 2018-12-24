@@ -22,7 +22,7 @@ class InputViewController: TypingViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        registerNotifications()
+        setup()
         
         if(!inputs.isEmpty) {
             var displayString = ""
@@ -40,9 +40,9 @@ class InputViewController: TypingViewController {
         inputs = lInputs
     }
     
-    @IBAction func cancelTapped() {
-        dismiss(animated: false, completion: nil)
-    }
+    //
+    // cancelTapped defined in TypingViewController
+    //
     
     @IBAction func saveTapped() {
         

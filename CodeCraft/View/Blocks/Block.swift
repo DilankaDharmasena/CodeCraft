@@ -6,7 +6,7 @@
 //  Copyright © 2018 dilankadharmasena. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol BlockDelegate {
     
@@ -16,18 +16,67 @@ protocol BlockDelegate {
     
 }
 
-protocol Block {
+class Block: UIView {
     
-    var delegate : BlockDelegate! { get set }
+    @IBOutlet var contentView: UIView!
+    @IBOutlet var viewCollection: Array<UIView>!
     
-    var blockID : BlockID! { get set }
+    var delegate: BlockDelegate!
+    var blockID: BlockID!
     
-    func setID(id : BlockID)
+    var buffer: CGFloat { return BlockDimensions().Buffer }
+    var bottomBuffer: CGFloat { fatalError() }
+    var blockName: String { fatalError() }
     
-    func handleSingleTap()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonInit()
+    }
     
-    func handleDoubleTap()
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        commonInit()
+    }
     
-    func select()
+    private func commonInit() {
+        Bundle.main.loadNibNamed(blockName, owner: self, options: nil)
+        
+        self.addSubview(contentView)
+        
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.topAnchor.constraint(equalTo: self.topAnchor, constant: buffer).isActive = true
+        contentView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: bottomBuffer).isActive = true
+        contentView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: buffer).isActive = true
+        contentView.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        
+        for view in viewCollection {
+            let doubleTap = UITapGestureRecognizer(target: self, action: #selector(handleDoubleTap))
+            doubleTap.numberOfTapsRequired = 2
+            let singleTap = UITapGestureRecognizer(target: self, action: #selector(handleSingleTap))
+            singleTap.numberOfTapsRequired = 1
+            singleTap.require(toFail: doubleTap)
+            view.addGestureRecognizer(doubleTap)
+            view.addGestureRecognizer(singleTap)
+        }
+        
+    }
+    
+    func setID(id: BlockID) {
+        blockID = id
+    }
+    
+    func select() {
+        for view in viewCollection {
+            view.backgroundColor = UIColor(red: 0.2, green: 0.3, blue: 0.3, alpha: 1.0)
+        }
+    }
+    
+    @objc func handleSingleTap() {
+        delegate.blockToBeEdited(id: blockID, data: [])
+    }
+    
+    @objc func handleDoubleTap() {
+        delegate.blockToBeSelected(id: blockID)
+    }
     
 }

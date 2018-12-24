@@ -12,9 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="IfBlock" customModule="CodeCraft" customModuleProvider="target">
             <connections>
-                <outlet property="compView" destination="Dbt-iU-ZZf" id="Db3-tH-21o"/>
-                <outlet property="compViewHeight" destination="iKK-dH-ZlU" id="Aur-S0-KD0"/>
-                <outlet property="compViewWidth" destination="bsS-Ia-YfX" id="KLs-cM-wmP"/>
+                <outlet property="checkView" destination="Dbt-iU-ZZf" id="Wav-im-Ky5"/>
+                <outlet property="checkViewHeight" destination="iKK-dH-ZlU" id="ttB-mk-N9I"/>
+                <outlet property="checkViewWidth" destination="bsS-Ia-YfX" id="QkQ-Om-H9O"/>
                 <outlet property="contentView" destination="nLF-NC-27X" id="s8D-E2-C3N"/>
                 <outlet property="operationsView" destination="6d4-td-xlz" id="Qcw-oG-nfB"/>
                 <outlet property="operationsViewHeight" destination="QYT-WN-oan" id="20T-cF-dnv"/>

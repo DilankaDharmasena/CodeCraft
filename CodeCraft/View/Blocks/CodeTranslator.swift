@@ -50,8 +50,8 @@ class CodeTranslator {
             let size = blockDimensions.whileBlock(compView: view1, operations: views)
             let frame = CGRect(origin: CGPoint.zero, size: size)
             let block = WhileBlock(frame: frame)
-            block.addComp(newView: view1)
-            block.addOperations(opViews: views)
+            block.setCheck(newView: view1)
+            block.setOperations(opViews: views)
             block.setID(id: currID.changeType(type: .whileBlock))
             block.delegate = blockDelegate
             return block
@@ -88,8 +88,8 @@ class CodeTranslator {
             let size = blockDimensions.forBlock(iterView: view1, operations: views)
             let frame = CGRect(origin: CGPoint.zero, size: size)
             let block = ForBlock(frame: frame)
-            block.addIter(newView: view1)
-            block.addOperations(opViews: views)
+            block.setCheck(newView: view1)
+            block.setOperations(opViews: views)
             block.setID(id: currID.changeType(type: .forBlock))
             block.delegate = blockDelegate
             return block
@@ -124,8 +124,8 @@ class CodeTranslator {
             let size = blockDimensions.ifBlock(compView: view1, operations: views)
             let frame = CGRect(origin: CGPoint.zero, size: size)
             let block = IfBlock(frame: frame)
-            block.addComp(newView: view1)
-            block.addOperations(opViews: views)
+            block.setCheck(newView: view1)
+            block.setOperations(opViews: views)
             block.setID(id: currID.changeType(type: .ifBlock))
             block.delegate = blockDelegate
             return block
@@ -153,7 +153,7 @@ class CodeTranslator {
             let size = blockDimensions.submitBlock(inputView: view1)
             let frame = CGRect(origin: CGPoint.zero, size: size)
             let block = SubmitBlock(frame: frame)
-            block.addValToSubmit(valView: view1)
+            block.setVal(valView: view1)
             block.setID(id: currID.changeType(type: .submitBlock))
             block.delegate = blockDelegate
             return block
@@ -190,8 +190,8 @@ class CodeTranslator {
             let size = blockDimensions.setBlock(varView: view1, valView: view2)
             let frame = CGRect(origin: CGPoint.zero, size: size)
             let block = SetBlock(frame: frame)
-            block.addVarToSet(varView: view1)
-            block.addValToSet(valView: view2)
+            block.setVar(varView: view1)
+            block.setVal(valView: view2)
             block.setID(id: currID.changeType(type: .setBlock))
             block.delegate = blockDelegate
             return block
@@ -229,9 +229,9 @@ class CodeTranslator {
             let size = blockDimensions.compBlock(firstInputView: view1, secondInputView: view2)
             let frame = CGRect(origin: CGPoint.zero, size: size)
             let block = CompBlock(frame: frame)
-            block.insertOperation(operation: opID)
-            block.insertFirstInput(inputView: view1)
-            block.insertSecondInput(inputView: view2)
+            block.setOperation(operation: opID)
+            block.setFirstInput(inputView: view1)
+            block.setSecondInput(inputView: view2)
             block.setID(id: currID.changeType(type: .compBlock))
             block.delegate = blockDelegate
             return block
@@ -282,9 +282,9 @@ class CodeTranslator {
             let size = blockDimensions.mathBlock(firstInputView: view1, secondInputView: view2)
             let frame = CGRect(origin: CGPoint.zero, size: size)
             let block = MathBlock(frame: frame)
-            block.insertOperation(operation: opID)
-            block.insertFirstInput(inputView: view1)
-            block.insertSecondInput(inputView: view2)
+            block.setOperation(operation: opID)
+            block.setFirstInput(inputView: view1)
+            block.setSecondInput(inputView: view2)
             block.setID(id: currID.changeType(type: .mathBlock))
             block.delegate = blockDelegate
             return block
@@ -296,7 +296,7 @@ class CodeTranslator {
             let size = blockDimensions.numBlock()
             let frame = CGRect(origin: CGPoint.zero, size: size)
             let block = NumBlock(frame: frame)
-            block.setNum(number: num)
+            block.setOperation(operation: String(num))
             block.setID(id: currID.changeType(type: .numBlock))
             block.delegate = blockDelegate
             return block
@@ -307,7 +307,7 @@ class CodeTranslator {
             let size = blockDimensions.varBlock()
             let frame = CGRect(origin: CGPoint.zero, size: size)
             let block = VarBlock(frame: frame)
-            block.setVar(variable: varID)
+            block.setOperation(operation: varID)
             block.setID(id: currID.changeType(type: .varBlock))
             block.delegate = blockDelegate
             return block

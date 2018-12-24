@@ -13,7 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NumBlock" customModule="CodeCraft" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="Cv9-G1-BZ3" id="eAO-ez-bf4"/>
-                <outlet property="numLabel" destination="UWD-2j-zZG" id="GoD-n5-4mR"/>
+                <outlet property="operationLabel" destination="UWD-2j-zZG" id="p3O-Ny-upu"/>
                 <outletCollection property="viewCollection" destination="I0F-lM-zRS" collectionClass="NSMutableArray" id="DHV-Jd-NpG"/>
             </connections>
         </placeholder>

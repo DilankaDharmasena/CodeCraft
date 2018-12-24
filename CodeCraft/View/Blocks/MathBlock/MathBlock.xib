@@ -16,7 +16,7 @@
                 <outlet property="firstInputView" destination="Z9A-C1-bAQ" id="NWk-ij-Dew"/>
                 <outlet property="firstInputViewHeight" destination="3pB-tb-N7u" id="0bs-YV-PtN"/>
                 <outlet property="firstInputViewWidth" destination="gja-JB-IRE" id="PeJ-z3-IfJ"/>
-                <outlet property="mathLabel" destination="G4G-1J-8o1" id="fdQ-vC-1NI"/>
+                <outlet property="operationLabel" destination="G4G-1J-8o1" id="vck-Qj-ig4"/>
                 <outlet property="secondInputView" destination="HWm-SL-vbI" id="tuB-li-AuJ"/>
                 <outlet property="secondInputViewHeight" destination="rY1-DH-Udf" id="sU3-yG-4T7"/>
                 <outlet property="secondInputViewWidth" destination="lIn-5A-Bdd" id="SjI-pa-vHf"/>

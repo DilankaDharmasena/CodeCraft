@@ -22,6 +22,10 @@ class CustomAlertViewController: UIViewController {
         alertTitle.text = alertTitleString
         alertTextView.text = alertMessageString
         
+        let viewTap = UITapGestureRecognizer(target: self, action: #selector(okTap))
+        viewTap.numberOfTapsRequired = 1
+        view.addGestureRecognizer(viewTap)
+        
     }
     
     func configure(title: String, message: String = "") {

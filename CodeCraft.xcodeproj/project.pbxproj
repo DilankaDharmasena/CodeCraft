@@ -61,6 +61,9 @@
 		FAF2D6EC21AB14AA006781DE /* UniversalTypeDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2D6EB21AB14AA006781DE /* UniversalTypeDefinitions.swift */; };
 		FAF2D6EE21AB23D8006781DE /* LevelMOExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2D6ED21AB23D8006781DE /* LevelMOExtension.swift */; };
 		FAF6EE9721D0058E00364A76 /* TypingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF6EE9621D0058E00364A76 /* TypingViewController.swift */; };
+		FAF6EE9B21D164B100364A76 /* Block_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF6EE9A21D164B100364A76 /* Block_1.swift */; };
+		FAF6EE9D21D1685900364A76 /* Block_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF6EE9C21D1685900364A76 /* Block_2.swift */; };
+		FAF6EE9F21D16B2700364A76 /* Block_3.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF6EE9E21D16B2700364A76 /* Block_3.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +135,9 @@
 		FAF2D6EB21AB14AA006781DE /* UniversalTypeDefinitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalTypeDefinitions.swift; sourceTree = "<group>"; };
 		FAF2D6ED21AB23D8006781DE /* LevelMOExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelMOExtension.swift; sourceTree = "<group>"; };
 		FAF6EE9621D0058E00364A76 /* TypingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingViewController.swift; sourceTree = "<group>"; };
+		FAF6EE9A21D164B100364A76 /* Block_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block_1.swift; sourceTree = "<group>"; };
+		FAF6EE9C21D1685900364A76 /* Block_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block_2.swift; sourceTree = "<group>"; };
+		FAF6EE9E21D16B2700364A76 /* Block_3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Block_3.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -436,6 +442,9 @@
 				FAEAA4F821AF5B96002EDEBF /* CodeTranslator.swift */,
 				FA04D5B821BB97CE00EA4F35 /* BlockDimensions.swift */,
 				FACB978F21BCA9E00022DA15 /* Block.swift */,
+				FAF6EE9A21D164B100364A76 /* Block_1.swift */,
+				FAF6EE9C21D1685900364A76 /* Block_2.swift */,
+				FAF6EE9E21D16B2700364A76 /* Block_3.swift */,
 			);
 			path = Blocks;
 			sourceTree = "<group>";
@@ -561,6 +570,7 @@
 				FA93B74221A4F74C0053167D /* LevelBubbleCollectionViewCell.swift in Sources */,
 				FACB97A121BDE8800022DA15 /* TaskViewController.swift in Sources */,
 				FA97FE1821CCAA11008026CA /* UIViewExtension.swift in Sources */,
+				FAF6EE9F21D16B2700364A76 /* Block_3.swift in Sources */,
 				FA04D59B21BB567600EA4F35 /* VarBlock.swift in Sources */,
 				FAF2D6B921A7B86F006781DE /* DataManager.swift in Sources */,
 				FA04D59D21BB56A500EA4F35 /* NumBlock.swift in Sources */,
@@ -574,6 +584,7 @@
 				FA97FE1421CC6E81008026CA /* WorkshopViewController.swift in Sources */,
 				FACB979C21BD86920022DA15 /* BlockCreateViewController.swift in Sources */,
 				FAF2D67C21A77F6A006781DE /* LevelSelectionViewController.swift in Sources */,
+				FAF6EE9D21D1685900364A76 /* Block_2.swift in Sources */,
 				FACB979421BCC18D0022DA15 /* CodeModel.swift in Sources */,
 				FAF6EE9721D0058E00364A76 /* TypingViewController.swift in Sources */,
 				FACB979221BCAD110022DA15 /* CodeEditor.swift in Sources */,
@@ -589,6 +600,7 @@
 				FAEAA4F521AF52B5002EDEBF /* Compiler.swift in Sources */,
 				FAEAA4F921AF5B96002EDEBF /* CodeTranslator.swift in Sources */,
 				FA04D58F21B9BF1C00EA4F35 /* SubmitBlock.swift in Sources */,
+				FAF6EE9B21D164B100364A76 /* Block_1.swift in Sources */,
 				FA97FE1621CC8246008026CA /* InputViewController.swift in Sources */,
 				FA97FE1121CC3A52008026CA /* CodingViewController.swift in Sources */,
 				FAF2D6BB21A7BC40006781DE /* LevelModelUtils.swift in Sources */,

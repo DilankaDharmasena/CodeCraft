@@ -24,6 +24,11 @@ class TaskViewController: UIViewController {
     override func viewDidLoad() {
         textView.textContainerInset = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
         textView.text = gamePrompt
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(flipCard))
+        tap.numberOfTapsRequired = 1
+        textView.addGestureRecognizer(tap)
+        
     }
     
     func configure(taskDescription: String, input: [Int], output: Int) {
@@ -47,7 +52,7 @@ class TaskViewController: UIViewController {
         
     }
     
-    func flipCard() {
+    @objc func flipCard() {
         
         exampleStatus = !exampleStatus
         
