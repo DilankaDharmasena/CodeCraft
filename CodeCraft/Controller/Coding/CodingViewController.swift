@@ -12,6 +12,7 @@ class CodingViewController : UIViewController, BlockDelegate, BlockEditorDelegat
     
     @IBOutlet weak var leftButton: UIButton!
     @IBOutlet weak var runSubmitButton: UIButton!
+    @IBOutlet weak var exitButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     
     let tester = Test()
@@ -39,6 +40,9 @@ class CodingViewController : UIViewController, BlockDelegate, BlockEditorDelegat
         
         let longRunPress = UILongPressGestureRecognizer(target: self, action: #selector(handleLongRunPress))
         runSubmitButton.addGestureRecognizer(longRunPress)
+        
+        let longExitPress = UILongPressGestureRecognizer(target: self, action: #selector(handleLongExitPress))
+        exitButton.addGestureRecognizer(longExitPress)
         
         reloadView()
         
@@ -84,6 +88,10 @@ class CodingViewController : UIViewController, BlockDelegate, BlockEditorDelegat
     }
     
     @objc func handleLongRunPress() {
+        fatalError()
+    }
+    
+    @objc func handleLongExitPress() {
         fatalError()
     }
     

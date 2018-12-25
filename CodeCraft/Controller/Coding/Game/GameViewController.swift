@@ -68,6 +68,15 @@ class GameViewController: CodingViewController {
     // Overridden from superclass
     
     override func handleLongRunPress() {
+        
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "Walkthrough_Scene") as! WalkthroughViewController
+        viewController.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
+        viewController.configure(code: codeModel.currentCode, inputs: sampleInput)
+        present(viewController, animated: false, completion: nil)
+        
+    }
+    
+    override func handleLongExitPress() {
         dismiss(animated: false, completion: {
             self.delegate.reloadScreen()
             self.delegate.transferToWorkshop(code: self.codeModel.currentCode, input: self.sampleInput)

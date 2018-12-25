@@ -29,13 +29,23 @@ class Test {
     }
     
     // Wrapper for runCode
-    func runSim(input : [Int], code : Code) -> RunResult {
+    func runSim(input : [Int], code : Code, delegate: WalkthroughViewController? = nil) -> RunResult {
         
         var variables = createInitialVariables(input: input)
         
-        var returnValue : (Variables, ErrorCode)
+        var compiler : Compiler
         
-        returnValue = Compiler().runCode(variables: variables, code: code, startTime: NSDate().timeIntervalSince1970)
+        if let delegateUnwrapped = delegate {
+            
+            compiler = Compiler(singleStep: true, delegate: delegate)
+            delegateUnwrapped.delegate = compiler
+            delegateUnwrapped.stepThroughCode(variables: variables, blockID: BlockID.start, num: 0, bool: false)
+            
+        } else {
+            compiler = Compiler()
+        }
+        
+        let returnValue : (Variables, ErrorCode) = compiler.runCode(variables: variables, code: code, startTime: NSDate().timeIntervalSince1970, blockID: BlockID.start)
         
         if(returnValue.1 != .yesAnswer) {
             return RunResult(error: returnValue.1, result: 0)

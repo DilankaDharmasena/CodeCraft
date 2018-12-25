@@ -46,9 +46,20 @@ class WorkshopViewController: CodingViewController, InputViewDelegate {
     // Overridden from superclass
     
     override func handleLongRunPress() {
+        
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "Walkthrough_Scene") as! WalkthroughViewController
+        viewController.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
+        viewController.configure(code: codeModel.currentCode, inputs: inputs)
+        present(viewController, animated: false, completion: nil)
+        
+    }
+    
+    override func handleLongExitPress() {
+        
         dismiss(animated: false, completion: {
             self.delegate.transferToLevel(code: self.codeModel.currentCode)
         })
+        
     }
     
     override func exitButtonTap(_ sender: UIButton) {

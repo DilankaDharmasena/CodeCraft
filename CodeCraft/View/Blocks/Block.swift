@@ -21,7 +21,7 @@ class Block: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet var viewCollection: Array<UIView>!
     
-    var delegate: BlockDelegate!
+    var delegate: BlockDelegate?
     var blockID: BlockID!
     
     var buffer: CGFloat { return BlockDimensions().Buffer }
@@ -72,11 +72,11 @@ class Block: UIView {
     }
     
     @objc func handleSingleTap() {
-        delegate.blockToBeEdited(id: blockID, data: [])
+        delegate?.blockToBeEdited(id: blockID, data: [])
     }
     
     @objc func handleDoubleTap() {
-        delegate.blockToBeSelected(id: blockID)
+        delegate?.blockToBeSelected(id: blockID)
     }
     
 }

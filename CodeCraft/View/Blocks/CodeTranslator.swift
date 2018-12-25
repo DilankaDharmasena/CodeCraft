@@ -12,9 +12,9 @@ class CodeTranslator {
     
     let blockDimensions = BlockDimensions()
     
-    let blockDelegate : BlockDelegate
+    let blockDelegate : BlockDelegate?
     
-    init(editor : BlockDelegate) {
+    init(editor : BlockDelegate? = nil) {
         blockDelegate = editor
     }
     
@@ -234,6 +234,11 @@ class CodeTranslator {
             block.setSecondInput(inputView: view2)
             block.setID(id: currID.changeType(type: .compBlock))
             block.delegate = blockDelegate
+            
+            if((currID == highlight) && (highlight.internalType != .blankBlock)) {
+                block.select()
+            }
+            
             return block
             
         case "MATH":
@@ -287,6 +292,11 @@ class CodeTranslator {
             block.setSecondInput(inputView: view2)
             block.setID(id: currID.changeType(type: .mathBlock))
             block.delegate = blockDelegate
+            
+            if((currID == highlight) && (highlight.internalType != .blankBlock)) {
+                block.select()
+            }
+            
             return block
             
             
@@ -344,7 +354,7 @@ class CodeTranslator {
                 
                 let newView = translateToBlocks(type: operation, inputs: inputs, currID: currID, highlight: highlight)
                 
-                if((currID == highlight.changeType(type: nil)) && (highlight.internalType != .blankBlock)) {
+                if((currID == highlight) && (highlight.internalType != .blankBlock)) {
                     let newBlock = newView as! Block
                     newBlock.select()
                 }

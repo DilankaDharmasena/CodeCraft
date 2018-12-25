@@ -60,7 +60,7 @@ struct BlockID : Equatable {
     }
     
     static func ==(lhs: BlockID, rhs: BlockID) -> Bool {
-        return lhs.parentType == rhs.parentType && lhs.parentLocation == rhs.parentLocation && lhs.parentRelationship == rhs.parentRelationship && lhs.internalType == rhs.internalType && lhs.internalLocation == rhs.internalLocation
+        return lhs.parentLocation == rhs.parentLocation && lhs.parentRelationship == rhs.parentRelationship && lhs.internalLocation == rhs.internalLocation
     }
 }
 
