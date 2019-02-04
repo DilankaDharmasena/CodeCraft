@@ -40,10 +40,28 @@ class GameViewController: CodingViewController {
         taskController.modalPresentationStyle = UIModalPresentationStyle.overFullScreen
         taskController.configure(taskDescription: gamePrompt, input: sampleInput, output: sampleOutput)
         
+        /*
         if(gameStatus == 0) {
             taskButtonTap()
         }
+         */
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let currentTime = NSDate().timeIntervalSince1970
+        
+        let lastTime : TimeInterval? = UserDefaults.standard.object(forKey: "reminderOpenedGame") as? TimeInterval
+        
+        if let lastTimeUnwrapped = lastTime {
+            if(lastTimeUnwrapped + 600.0 < currentTime) {
+                launchAlertDialog(title: universalStrings.quickTipsTitle, message: universalStrings.quickTipsGame)
+            }
+        } else {
+            launchAlertDialog(title: universalStrings.quickTipsTitle, message: universalStrings.quickTipsGame)
+        }
+        
+        UserDefaults.standard.set(currentTime, forKey: "reminderOpenedGame")
     }
     
     func configure(gameID id : Int, code: Code, delegate lDelegate: GameViewDelegate) {

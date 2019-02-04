@@ -27,10 +27,6 @@ class UniversalStrings {
     let successfulRunMessage : String = "Success!"
     let outputMessageFormat : String = "Your code and inputs resulted in an output of: %d"
     
-    let reminderTitle : String = "Reminder"
-    
-    let remindInputsMessage : String = "Don't forget to set your inputs if you're using them"
-    
     let blockNames : [InternalType:String] =
     [
         .whileBlock : "While Loop",
@@ -55,5 +51,11 @@ class UniversalStrings {
         .missingBlocksError : "At least one required block is missing",
         .outOfScopeError : "There was an attempt to access an out of scope variable"
     ]
+    
+    let quickTipsTitle : String = "Quick Tips"
+    
+    let quickTipsGame : String = "1. When you want to add a block underneath an original one, double tap the original block to select it. Double tap anywhere in the whitespace to clear your selection.\n2. Hold the exit button to transfer your code to the workshop.\n3. Hold the run button to walk through your code line by line."
+    
+    let quickTipsWorkshop : String = "1. Don't forget to set your inputs if you're using them.\n2. When you want to add a block underneath an original one, double tap the original block to select it. Double tap anywhere in the whitespace to clear your selection.\n3. Hold the exit button to transfer your code to any of the challenges.\n4. Hold the run button to walk through your code line by line."
     
 }

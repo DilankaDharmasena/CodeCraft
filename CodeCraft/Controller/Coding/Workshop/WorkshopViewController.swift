@@ -25,10 +25,10 @@ class WorkshopViewController: CodingViewController, InputViewDelegate {
         
         if let lastTimeUnwrapped = lastTime {
             if(lastTimeUnwrapped + 600.0 < currentTime) {
-                launchAlertDialog(title: universalStrings.reminderTitle, message: universalStrings.remindInputsMessage)
+                launchAlertDialog(title: universalStrings.quickTipsTitle, message: universalStrings.quickTipsWorkshop)
             }
         } else {
-            launchAlertDialog(title: universalStrings.reminderTitle, message: universalStrings.remindInputsMessage)
+            launchAlertDialog(title: universalStrings.quickTipsTitle, message: universalStrings.quickTipsWorkshop)
         }
         
         UserDefaults.standard.set(currentTime, forKey: "reminderOpened")
