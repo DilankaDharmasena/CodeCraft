@@ -4,7 +4,31 @@
 <array>
 	<dict>
 		<key>id</key>
-		<integer>5</integer>
+		<integer>8</integer>
+		<key>status</key>
+		<integer>0</integer>
+		<key>prompt</key>
+		<string>Submit the sum of the digits in the input</string>
+		<key>inputs</key>
+		<string>23 : 6 : 100</string>
+		<key>outputs</key>
+		<string>5 : 6 : 1</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>7</integer>
+		<key>status</key>
+		<integer>0</integer>
+		<key>prompt</key>
+		<string>Submit 1 if the input is prime, otherwise submit 0</string>
+		<key>inputs</key>
+		<string>17 : 6 : 100</string>
+		<key>outputs</key>
+		<string>1 : 0 : 0</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>6</integer>
 		<key>status</key>
 		<integer>0</integer>
 		<key>prompt</key>
@@ -13,6 +37,18 @@
 		<string>3 : 15 : 25 : 100</string>
 		<key>outputs</key>
 		<string>3 : 2 : 1 : 4</string>
+	</dict>
+	<dict>
+		<key>id</key>
+		<integer>5</integer>
+		<key>status</key>
+		<integer>0</integer>
+		<key>prompt</key>
+		<string>Find the greatest common divisor of the two inputs</string>
+		<key>inputs</key>
+		<string>3,15 : 28,35</string>
+		<key>outputs</key>
+		<string>3 : 7</string>
 	</dict>
 	<dict>
 		<key>id</key>
